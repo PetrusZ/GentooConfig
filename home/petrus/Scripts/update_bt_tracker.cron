@@ -1,0 +1,6 @@
+#每周六14点进行更新
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+#MAILTO=pi
+HOME=/home/petrus
+0 14 * * 6 bash /home/petrus/Scripts/update_bt_tracker.sh && [[ -z $XDG_RUNTIME_DIR ]] && export XDG_RUNTIME_DIR=/run/user/$UID && systemctl --user restart aria2.service

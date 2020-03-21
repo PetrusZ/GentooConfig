@@ -1,0 +1,58 @@
+# created by eselect-repo
+
+[oboeverlay]
+location = /var/db/repos/oboeverlay
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/oboeverlay.git
+
+
+[4nykey]
+location = /var/db/repos/4nykey
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/4nykey.git
+
+
+[jorgicio]
+location = /var/db/repos/jorgicio
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/jorgicio.git
+
+
+[steam-overlay]
+location = /var/db/repos/steam-overlay
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/steam-overlay.git
+
+
+[go-overlay]
+location = /var/db/repos/go-overlay
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/go-overlay.git
+
+
+[matrix]
+location = /var/db/repos/matrix
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/matrix.git
+
+
+[gig]
+location = /var/db/repos/gig
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/gig.git
+
+
+[mva]
+location = /var/db/repos/mva
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/mva.git
+
+[benzene-overlay]
+location = /var/db/repos/benzene-overlay
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/benzene-overlay.git
+
+[guru]
+location = /var/db/repos/guru
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/guru.git

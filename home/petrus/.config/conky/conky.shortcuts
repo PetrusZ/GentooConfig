@@ -1,0 +1,55 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+-- Doc: file:///usr/share/doc/conky-1.10.8-r8/html
+conky.config = {
+	alignment = 'bottom_left',
+	gap_x = 25,		-- horizontal gap size(pixel)
+	gap_y = 45,		-- vertical gap siez(pixel)
+	background = true,	-- forked to background when started
+	cpu_avg_samples = 2,
+	default_color = 'EB564D',	-- Default color and border color
+	color2 = 'F9FAF9',
+	double_buffer = true,	-- It is highly recommended to use own window with this one so double buffer won't be so big
+	font = 'Hack:size=6',	-- Font name in X, xfontsel can be used to get a nice font
+	draw_shades = false,
+	minimum_width = 200,
+	no_buffers = true,	-- Subtract (file system) buffers from used memory?
+	own_window = true,	-- create own window to draw?
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 1.0,
+	use_xft = true,		-- Use Xft (anti-aliased font and stuff)
+}
+conky.text = [[
+${color2}rofi (windows) - ${color}Control+mod+w
+${color2}send to workspace 0-9 - ${color}mod+Control+0-9
+
+${color2}container layout (tabbed) - ${color}mod+w
+${color2}container layout (stack) - ${color}mod+s
+${color2}container layout (split) - ${color}mod+e
+
+${color2}split container (horiz) - ${color}mod+shift+h
+${color2}split container (vert) - ${color}mod+v
+${color2}split container (toggle) - ${color}mod+shift+t
+
+${color2}hide window - ${color}mod+minus
+${color2}show window - ${color}mod+plus
+
+${color2}fullscreen - ${color}mod+f
+${color2}toggle floating - ${color}mod+Control+Space
+${color2}toggle floating by mouse - ${color}mod+button3(mouse)
+${color2}move floating by mouse- ${color}mod+mouse
+${color2}toggle focus between tiling/floating containers - ${color}mod+Space
+
+${color2}change border style none - ${color}mod+u
+${color2}change border style nornal - ${color}mod+n
+${color2}change border style pixel - ${color}mod+p
+${color2}change border style toggle - ${color}mod+t
+
+${color2}resize mode - ${color}mod+r
+${color2}move mode - ${color}mod+m
+${color2}gaps mode - ${color}mod+Control+g
+${color2}mpd mode - ${color}mod+Control+p
+
+${color2}reolad i3 cofig - ${color}mod+Control+c
+${color2}restart i3 - ${color}mod+Control+r
+]]

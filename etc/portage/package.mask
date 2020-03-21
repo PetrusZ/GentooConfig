@@ -1,0 +1,11 @@
+# www-client/chromium
+media-sound/pulseaudio::jorgicio
+x11-themes/adapta-gtk-theme::jorgicio
+x11-themes/adapta-gtk-theme::gentoo
+x11-themes/adapta-gtk-theme::4nykey
+x11-wm/i3-gaps::gig
+dev-go/go-md2man::go-overlay
+media-libs/libuninameslist::4nykey
+media-gfx/fontforge::4nykey
+#media-fonts/source-han-sans::4nykey
+#>sys-kernel/gentoo-sources-4.15.2

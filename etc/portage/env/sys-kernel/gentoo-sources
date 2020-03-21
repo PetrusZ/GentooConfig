@@ -1,0 +1,17 @@
+post_pkg_postinst() {
+    CURRENT_KV=$(uname -r)
+    CURRENT_KD="linux-$(uname -r | cut -f 1,2 -d '-')"
+    # Check to see if genkernel has been run previously for the running kernel and use that config
+    echo "/usr/src/${CURRENT_KD}/.config"
+    if [[ -f "/usr/src/${CURRENT_KD}/.config" ]] ; then # Use latest kernel config from current kernel
+        genkernel --kernel-config="/usr/src/${CURRENT_KD}/.config" kernel
+    elif [[ -f /proc/config.gz ]] ; then # Use known running good kernel
+        genkernel --kernel-config=/proc/config.gz kernel
+    elif [[ -f "/etc/kernels/kernel-config-${CURRENT_KV}" ]] ; then
+        genkernel --kernel-config="/etc/kernels/kernel-config-${CURRENT_KV}" kernel
+    else # No valid configs known
+        genkernel kernel
+    fi
+
+    eclean-kernel -n 2
+}

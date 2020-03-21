@@ -1,0 +1,21 @@
+#每周六14点进行备份
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+#MAILTO=petrus
+HOME=/home/petrus
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+
+0 14 * * 6 export DISPLAY=:0 ; bash /home/petrus/Project/Backup4Config/push2github.sh && notify-send 'System configration backup success.' || notify-send -u critical 'System configration backup failure.'
+0 14 * * 6 bash /home/petrus/Scripts/update_bt_tracker.sh && export XDG_RUNTIME_DIR=/run/user/$UID && systemctl --user restart aria2.service || notify-send -u critical 'Update bt tracker failure.'
+0 14 * * * bash /home/petrus/Scripts/pt_attendance.sh || notify-send -u critical 'Auto pt sites attendance failure.'

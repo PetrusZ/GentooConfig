@@ -1,0 +1,51 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+-- Doc: file:///usr/share/doc/conky-1.10.8-r8/html
+conky.config = {
+	alignment = 'top_right',
+	gap_x = 25,		-- horizontal gap size(pixel)
+	gap_y = 13,		-- vertical gap siez(pixel)
+	background = true,	-- forked to background when started
+	cpu_avg_samples = 2,	-- The number of samples to average for CPU monitoring
+	default_color = 'F9FAF9',	-- Default color and border color
+	color2 = 'EB564D',
+	double_buffer = true,	-- It is highly recommended to use own window with this one so double buffer won't be so big
+	font = 'Hack:size=6',	-- Font name in X, xfontsel can be used to get a nice font
+	draw_shades = false,
+	minimum_width = 200,
+	no_buffers = true,	-- Subtract (file system) buffers from used memory?
+	own_window = true,	-- create own window to draw?
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 1.0,
+	use_xft = true,		-- Use Xft (anti-aliased font and stuff)
+}
+conky.text = [[
+${voffset 8}$color2${font :size=16}${time %A}$font\
+${voffset -8}$alignr$color${font :size=38}${time %e}$font
+$color${voffset -30}$color${font :size=18}${time %b}$font\
+${voffset -3} $color${font :size=20}${time %Y}$font$color2$hr
+#
+${voffset 20}${offset 40}${color}Weather
+${offset 40}${color2}Today: $alignr$color${execi 1200 /home/petrus/.config/conky/weather.py 1day}
+${offset 40}${color2}Tomorrow: $alignr$color${execi 1200 /home/petrus/.config/conky/weather.py 2day}
+${offset 40}${color2}DAT: $alignr$color${execi 1200 /home/petrus/.config/conky/weather.py 3day}
+#
+${voffset 20}${offset 40}${color}CPU${font :bold:size=8}$alignr$cpu%
+${offset 40}$font$color2${top name 1}$alignr$color${top cpu 1}%
+${offset 40}$color2${top name 2}$alignr$color${top cpu 2}%
+${offset 40}$color2${top name 3}$alignr$color${top cpu 3}%
+${offset 40}$color2${top name 4}$alignr$color${top cpu 4}%
+${offset 40}$color2${top name 5}$alignr$color${top cpu 5}%
+#
+${offset 40}${voffset 20}${color}RAM${font :bold:size=8}$alignr$mem$font
+${offset 40}$color2${top_mem name 1}$alignr$color${top_mem mem_res 1}
+${offset 40}$color2${top_mem name 2}$alignr$color${top_mem mem_res 2}
+${offset 40}$color2${top_mem name 3}$alignr$color${top_mem mem_res 3}
+${offset 40}$color2${top_mem name 4}$alignr$color${top_mem mem_res 4}
+${offset 40}$color2${top_mem name 5}$alignr$color${top_mem mem_res 5}
+#
+${offset 40}${voffset 20}${color}Swap${font :bold:size=8}$alignr${swap}/ ${swapfree}
+${voffset 10}${color2}${alignr}${execi 1200 whoami}@${nodename}
+${alignr}${color2}${font :size=8}uptime: ${color}${uptime_short}
+${voffset 5}${color2}${font :size=8}${alignr}kernel: ${color}${kernel}
+]]

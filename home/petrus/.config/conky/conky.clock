@@ -1,0 +1,63 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+-- Doc: file:///usr/share/doc/conky-1.10.8-r8/html
+conky.config = {
+	use_xft = true,
+	font = 'Hack:size=8',	-- Font name in X, xfontsel can be used to get a nice font
+	xftalpha = 0.1,
+	update_interval = 5,
+	total_run_times = 0,
+
+	own_window_class = 'Conky',
+	own_window_type = 'override',
+	own_window = true,
+
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_colour = '#000000',
+	own_window_argb_visual = false,
+	own_window_argb_value = 0,
+
+	double_buffer = true,
+	--minimum_size 250 5
+	--maximum_width 500
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	default_color = 'white',
+	default_shade_color = 'red',
+	default_outline_color = 'green',
+	alignment = 'bottom_right',
+	-- gap_x = 850,
+	gap_y = 50,
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	net_avg_samples = 1,
+	override_utf8_locale = true,
+	use_spacer = 'right',
+
+
+	minimum_width = 0, minimum_height = 0,
+
+-- This is the default "Gotham" conky clock that comes with the
+-- conky-manager package.
+-- It has been adapted to use Gruvbox colorscheme and
+-- use a slightly smaller font-size.
+
+-- (From the next line down, #WhiteSpaceMatters) ...
+};
+
+conky.text = [[
+${voffset 10}${color EBDBB2}${font :pixelsize=120}${time %I:%M}${font}${voffset -84}${offset 10}${color 98971A}${font :pixelsize=40}${time %d} ${voffset -15}${color D79921}${font :pixelsize=22}${time  %B} ${time %Y}${color CC241D}${font}${voffset 24}${font :pixelsize=45}${offset -148}${time %A}${font}
+
+
+
+# conkysucks
+#white ${color EDBBB2}
+#green ${color 98971A}
+#yllw ${color D79921}
+#red ${color CC241D}
+#purple ${color B16286}
+
+]];

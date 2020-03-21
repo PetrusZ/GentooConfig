@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "bash-language-server": "^1.7.0"
+  }
+}

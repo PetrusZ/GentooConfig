@@ -1,0 +1,71 @@
+[global]
+    monitor = 0
+    follow = keyboard
+    geometry = "320x5-15+15"
+    # geometry = "1500x5-40+200"
+    indicate_hidden = yes
+    shrink = no
+    transparency = 0
+    notification_height = 0
+    separator_height = 2
+    padding = 10
+    horizontal_padding = 10
+    frame_width = 1
+    frame_color = "#353535"
+    separator_color = "#000000"
+    sort = yes
+    idle_threshold = 120
+    font = Noto Sans, Taskbar 10
+    line_height = 0
+    markup = full
+    plain_text = no
+    format = "<b>%s</b>\n%b %p"
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    stack_duplicates = yes
+    hide_duplicate_count = false
+    show_indicators = yes
+    icon_position = left
+    max_icon_size = 32
+    icon_folders = /usr/share/icons/hicolor/scalable/apps:/usr/share/icons/hicolor/16x16/apps:/usr/share/icons/hicolor/32x32/apps:/usr/share/icons/hicolor/256x256/apps
+    sticky_history = yes
+    history_length = 20
+    startup_notification = false
+    bounce_freq = 0
+    browser = /usr/bin/chromium
+    dmenu = /usr/bin/rofi -dmenu -p dunst
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+[urgency_low]
+    timeout = 10
+    background = "#353535"
+    foreground = "#eaeaea"
+    icon = /usr/share/icons/Adwaita/256x256/status/dialog-information.png
+
+[urgency_normal]
+    timeout = 10
+    background = "#353535"
+    foreground = "#eaeaea"
+    icon = /usr/share/icons/Adwaita/256x256/status/dialog-information.png
+
+[urgency_critical]
+    timeout = 0
+    background = "#4a3533"
+    foreground = "#eaeaea"
+    icon = /usr/share/icons/Adwaita/256x256/status/dialog-error.png
+
+[telegram]
+    appname = *elegram*
+    # urgency = normal
+    # summary = *EMERGENZE*
+    # urgency = critical
+    # format  = "%s "%b""
+
+# vim: ft=cfg

@@ -1,0 +1,522 @@
+# vim: ft=i3
+# 如果你想生成默认配置请删除此文件并运行 i3-config-wizard(1).
+# 具体配置说明请看 https://i3wm.org/docs/userguide.html
+
+#===appearance===
+
+# 设置Mod键 这里为Super/Win键
+set $mod Mod4
+# set $alt Mod1
+
+# 全局字体
+font pango:Noto Sans 10
+
+# Orientation for new workspaces
+# default_orientation horizontal
+
+# Layout mode for new containers
+# workspace_layout default
+
+hide_edge_borders both
+# hide_edge_borders smart
+
+set $default_border_pixel 1
+set $default_floating_border_pixel 0
+default_border pixel $default_border_pixel
+default_floating_border none
+
+# 关闭鼠标自动focus
+focus_follows_mouse no
+
+# 自动来回切换工作区
+workspace_auto_back_and_forth yes
+
+# gaps setting
+# NOTE: outer gaps are an addition to inner gaps,
+# so gaps outer all set 0 will eliminate outer gaps,
+# but if inner gaps are set, there will still be gaps on the edge of the screen.
+set $default_gaps_inner 10
+set $default_gaps_outer 0
+
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+
+smart_gaps on
+smart_borders on
+
+#---wallpaper---
+
+# static mode
+exec --no-startup-id feh -Z --bg-scale /home/petrus/Pictures/gentoo/wall.png
+
+# random mode
+# exec ~/.config/i3/wallpaper.sh &
+
+#---window style---
+
+# copy from vim
+set $color_dark0_hard     #1d2021
+set $color_dark0          #282828
+set $color_dark0_soft     #32302f
+set $color_dark1          #3c3836
+set $color_dark2          #504945
+set $color_dark3          #665c54
+set $color_dark4          #7c6f64
+set $color_dark4_256      #7c6f64
+
+set $color_gray_245       #928374
+set $color_gray_244       #928374
+
+set $color_light0_hard    #f9f5d7
+set $color_light0         #fbf1c7
+set $color_light0_soft    #f2e5bc
+set $color_light1         #ebdbb2
+set $color_light2         #d5c4a1
+set $color_light3         #bdae93
+set $color_light4         #a89984
+set $color_light4_256     #a89984
+
+set $color_bright_red     #fb4934
+set $color_bright_green   #b8bb26
+set $color_bright_yellow  #fabd2f
+set $color_bright_blue    #83a598
+set $color_bright_purple  #d3869b
+set $color_bright_aqua    #8ec07c
+set $color_bright_orange  #fe8019
+
+set $color_neutral_red    #cc241d
+set $color_neutral_green  #98971a
+set $color_neutral_yellow #d79921
+set $color_neutral_blue   #458588
+set $color_neutral_purple #b16286
+set $color_neutral_aqua   #689d6a
+set $color_neutral_orange #d65d0e
+
+set $color_faded_red      #9d0006
+set $color_faded_green    #79740e
+set $color_faded_yellow   #b57614
+set $color_faded_blue     #076678
+set $color_faded_purple   #8f3f71
+set $color_faded_aqua     #427b58
+set $color_faded_orange   #af3a03
+
+set $color_unused        #ff0000
+
+# Colors                  border                 background             text                   indicator           child_border
+# 窗口颜色                标题栏边框             标题栏背景             标题栏文字             分割指示线          边框
+client.focused            $color_dark0_hard      $color_dark0_hard      $color_light0_hard     $color_bright_red   $color_light0_hard
+client.focused_inactive   $color_dark0_hard      $color_dark0_hard      $color_light0_hard     $color_bright_red   $color_light4_256
+client.unfocused          $color_dark0_hard      $color_dark0_hard      $color_light0_hard     $color_bright_red   $color_dark0
+client.urgent             $color_dark0_hard      $color_dark0_hard      $color_light0_hard     $color_bright_red   $color_bright_yellow
+client.placeholder        $color_unused          $color_unused          $color_unused          $color_bright_red   $color_unused
+
+client.background		  #ffffff
+
+# 窗口颜色
+# class                         border  backgr. text    indicator child_border
+# client.focused                  #121212 #101010 #9e8a8e
+# client.focused_inactive 	      #101010 #191919 #999999
+# client.unfocused                #101010 #191919 #999999
+# client.urgent                   #cd989a #cd989a #2e3436
+#
+# client.background		        #1d1d1d
+
+
+#===workspace control===
+
+# 设置workspace变量
+set $WS1 1 Terminal
+set $WS2 2 Chromium
+set $WS3 3 Chat
+set $WS4 4 File
+set $WS5 5 Media
+set $WS6 6 Game
+set $WS7 7 Download
+set $WS8 8 Code
+set $WS9 9 Trash
+set $WS0 0 Main
+
+#---switch workspace---
+
+# 切换到附近的工作区
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+# bindsym $alt+Tab workspace prev
+
+#切换工作区
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS0
+
+#移动工作区
+bindsym $mod+Control+1 move container to workspace $WS1
+bindsym $mod+Control+2 move container to workspace $WS2
+bindsym $mod+Control+3 move container to workspace $WS3
+bindsym $mod+Control+4 move container to workspace $WS4
+bindsym $mod+Control+5 move container to workspace $WS5
+bindsym $mod+Control+6 move container to workspace $WS6
+bindsym $mod+Control+7 move container to workspace $WS7
+bindsym $mod+Control+8 move container to workspace $WS8
+bindsym $mod+Control+9 move container to workspace $WS9
+bindsym $mod+Control+0 move container to workspace $WS0
+
+#---assign workspace---
+
+#指定工作区，通过xprop命令查看名称
+assign [class="Chromium"] $WS2
+assign [class="Telegram"] $WS3
+assign [class="Pcmanfm"] $WS4
+assign [class="mpv"] $WS5
+assign [class="Steam"] $WS6
+assign [class="Uget-gtk"] $WS7
+# assign [class="qBittorrent"] $WS7
+
+# for_window [title=".*\.md - Chromium" class="Chromium"] move container to workspace $WS1
+for_window [class="libreoffice.*"] move to workspace $WS4
+for_window [class="Spotify"] move to workspace $WS5
+
+
+# 指定程序默认悬浮窗口
+#for_window [class="Termite"] floating enable, resize set 700 600, move position center
+
+#===window control===
+
+# 关闭当前窗口
+bindsym $mod+F4 kill
+bindsym $mod+Control+q kill
+
+# $mod+鼠标中键关闭窗口
+bindsym --whole-window $mod+button2 kill
+
+# 全屏
+bindsym $mod+f fullscreen toggle
+
+# 悬浮窗口
+bindsym $mod+Control+space floating toggle
+
+# $mod+鼠标右键悬浮窗口
+bindsym --whole-window $mod+button3 floating toggle
+
+# 更改布局 (堆叠, 标签, 分割)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# 隐藏和再现窗口
+# hide | show window(minus is "-" and plus is "+".)
+bindsym $mod+minus move scratchpad
+bindsym $mod+plus scratchpad show
+
+# change border style
+bindsym $mod+u border none
+bindsym $mod+n border normal
+bindsym $mod+p border pixel $default_border_pixel
+bindsym $mod+t border toggle
+
+#---window focus---
+
+# 改变焦点
+# change focus between tiling/floating containers
+bindsym $mod+space focus mode_toggle
+
+# 集中父窗口
+# focus the parent container
+bindsym $mod+a focus parent
+
+# 集中子窗口
+#bindsym $mod+d focus child
+
+# 移动焦点窗口
+bindsym $mod+k focus up
+bindsym $mod+j focus down
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+
+# 同上
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+
+#---move window---
+
+# 使用Mod键+鼠标拖拽悬浮窗口
+floating_modifier $mod
+
+# 移动窗口
+bindsym $mod+Control+k move up
+bindsym $mod+Control+j move down
+bindsym $mod+Control+h move left
+bindsym $mod+Control+l move right
+
+# 同上
+bindsym $mod+Control+Up move up
+bindsym $mod+Control+Down move down
+bindsym $mod+Control+Left move left
+bindsym $mod+Control+Right move right
+
+#---split window---
+
+# 水平方向分割
+# $mod+h与向左移动焦点窗口冲突
+bindsym $mod+Shift+h split h
+# 垂直方向分割
+bindsym $mod+v split v
+bindsym $mod+Shift+t split toggle
+
+
+#===shortcut===
+
+#重载配置
+bindsym $mod+Control+c reload ; exec notify-send 'Reloaded i3 configuration.'
+#重启i3
+bindsym $mod+Control+r restart ; exec notify-send 'Restarted i3.'
+
+# 退出动作
+# bindsym $mod+Control+e exec i3-nagbar -t warning -m 'What to do?' \
+#     -b '锁屏' 'dm-tool lock' \
+#     -b '退出' 'i3-msg exit' \
+#     -b '休眠' 'sudo systemctl hibernate' \
+#     -b '待机' 'sudo systemctl suspend' \
+#     -b '混合休眠' 'sudo systemctl hybrid-sleep' \
+#     -b '关机' 'sudo shutdown -h now' \
+#     -b '重启' 'sudo reboot'
+
+# 音量
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
+# bindsym XF86AudioRaiseVolume exec "amixer sset 'Master' 5%+ unmute"
+# bindsym XF86AudioLowerVolume exec "amixer sset 'Master' 5%- unmute"
+# bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# 截图
+bindsym Print exec flameshot gui -p /home/petrus/Pictures/Screenshot -d 200
+bindsym Control+Print exec flameshot full -c -p /home/petrus/Pictures/Screenshot
+
+# 切换触摸板开关
+# bindsym $mod+F6 exec bash ~/Scripts/toggle_touchpad.sh
+bindsym XF86TouchpadOn exec bash ~/Scripts/touchpad_on.sh
+bindsym XF86TouchpadOff exec bash ~/Scripts/touchpad_off.sh
+
+# 打开一个终端（推荐termite）
+bindsym $mod+Return exec gnome-terminal
+
+# 运行Rofi快速运行软件
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym Control+$mod+w exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show window"
+
+# 切换声卡
+bindcode 198 exec /home/petrus/Scripts/switch_sound_device.sh switch
+
+#===mode===
+
+# 调整窗口大小
+set $mode_resize resize: [j|k|h|l]
+mode "$mode_resize" {
+    # 进入resize模式之后才能更改
+    # 通过vim模式更改大小
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym j resize shrink height 10 px or 10 ppt
+    bindsym h resize grow width 10 px or 10 ppt
+    bindsym l resize shrink width 10 px or 10 ppt
+
+    # 通过方向键更改大小
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # 恢复正常模式
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode $mode_resize
+
+
+# 移动窗口位置
+set $mode_move move: [j|k|h|l]
+mode "$mode_move" {
+    # 通过vim模式更改位置
+    bindsym k move up    20 px
+    bindsym j move down  20 px
+    bindsym h move left  20 px
+    bindsym l move right 20 px
+
+    # 通过方向键更改位置
+    bindsym Up move up    20 px
+    bindsym Down move down  20 px
+    bindsym Left move left  20 px
+    bindsym Right move right 20 px
+
+    # 恢复正常模式
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+m mode $mode_move
+
+# gaps模式
+set $mode_gaps Gaps: [o]uter, [i]nner
+set $mode_gaps_outer Outer Gaps: [+|-|0|d] (local), mod+[+|-|0|d] (global)
+set $mode_gaps_inner Inner Gaps: [+|-|0|d] (local), mod+[+|-|0|d] (global)
+
+bindsym $mod+Control+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+    bindsym o       mode "$mode_gaps_outer"
+    bindsym i       mode "$mode_gaps_inner"
+
+    bindsym 0       mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
+    bindsym d       mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
+    bindsym $mod+0  mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
+    bindsym $mod+d  mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
+
+    bindsym Return  mode "default"
+    bindsym Escape  mode "default"
+}
+
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     mode "default", gaps inner current set 0
+    bindsym d     mode "default", gaps inner current set $default_gaps_inner
+
+    bindsym $mod+plus  gaps inner all plus 5
+    bindsym $mod+minus gaps inner all minus 5
+    bindsym $mod+0     mode "default", gaps inner all set 0
+    bindsym $mod+d     mode "default", gaps inner all set $default_gaps_inner
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     mode "default", gaps outer current set 0
+    bindsym d     mode "default", gaps outer current set $default_gaps_outer
+
+    bindsym $mod+plus  gaps outer all plus 5
+    bindsym $mod+minus gaps outer all minus 5
+    bindsym $mod+0     mode "default", gaps outer all set 0
+    bindsym $mod+d     mode "default", gaps outer all set $default_gaps_outer
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Shutdown, Suspend, Lock (e)
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (h) shutdown
+mode "$mode_system" {
+  bindsym l exec betterlockscreen -l dim, mode "default"
+  bindsym e exec i3-msg exit, mode "default"
+  # bindsym s exec betterlockscreen -s dim, mode "default"
+  bindsym s exec systemctl suspend, mode "default"
+  bindsym r exec systemctl reboot, mode "default"
+  bindsym h exec systemctl poweroff, mode "default"
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+Control+e mode "$mode_system"
+
+# mpd控制模式
+set $mode_mpd mpd (p) prev, (n) next, (t) toggle
+mode "$mode_mpd" {
+    bindsym p mode "default", exec --no-startup-id mpc --host=/home/petrus/.mpd/mpd.socket prev
+    bindsym n mode "default", exec --no-startup-id mpc --host=/home/petrus/.mpd/mpd.socket next
+    bindsym t mode "default", exec --no-startup-id mpc --host=/home/petrus/.mpd/mpd.socket toggle
+
+    # 恢复正常模式
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Control+p mode "$mode_mpd"
+
+#===stat bar====
+
+#状态栏
+bar {
+    position bottom
+    tray_output none
+    status_command py3status --dbus-notify -c ~/.config/i3/i3status.conf
+    # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+
+    # 想让bar透明可以去掉下面一行的注释，不过托盘可能显示不完美
+    # i3bar_command i3bar -t
+    # status_command i3status
+
+    font pango:Noto Sans , Font Awesome 5 Free Solid, Monospace, Taskbar 10
+    # font pango:Ubuntu Mono 12.5px
+    separator_symbol " | "
+
+    # separator_symbol "//"
+    # strip_workspace_numbers yes
+    # 非i3-gaps请删除下面这一行
+    height 25
+
+    # 取消状态栏鼠标滚动
+    bindsym button4 nop
+    bindsym button5 nop
+
+    colors {
+      # Gruvbox theme
+      # Whole color settings
+      background $color_dark0_hard
+      separator  $color_bright_yellow
+      statusline $color_light0_hard
+
+      # Type             border                 background              font
+      focused_workspace  $color_bright_yellow   $color_bright_yellow    $color_dark0_hard
+      active_workspace   $color_unused          $color_unused           $color_unused
+      inactive_workspace $color_dark0_hard      $color_dark0_hard       $color_light4_256
+      urgent_workspace   $color_bright_red      $color_bright_red       $color_light0_hard
+    }
+
+    # colors {
+    #     # 想让bar变透明还需要去掉下面一行的注释并注释它下面的一行
+    #     # background        #1d2021A0
+    #     background          #282828
+    #     statusline          #DDDDDD
+    #     separator           #7addda
+
+    #     # colorclass        border      background  text
+    #     focused_workspace   #2B83A6     #2B83A6     #DDDDDD
+    #     active_workspace    #212121     #212121     #DDDDDD
+    #     inactive_workspace  #212121     #212121     #DDDDDD
+    #     urgent_workspace    #D64E4E     #D64E4E     #DDDDDD
+    # }
+}
+
+
+#===autostart parograms===
+
+# 开启鼠标中间滚动
+exec xinput set-prop "Logitech Gaming Mouse G400" "libinput Scroll Method Enabled" 0, 0, 1
+exec --no-startup-id compton -cb --config ~/.config/compton.conf
+exec --no-startup-id conky -c ~/.config/conky/conky
+exec --no-startup-id conky -c ~/.config/conky/conky.shortcuts
+exec --no-startup-id fcitx
+# exec --no-startup-id xautolock -time 10 -locker "lock"
+
+exec --no-startup-id chromium
+exec --no-startup-id gnome-terminal
+exec --no-startup-id telegram-desktop
+exec --no-startup-id unclutter
+# exec --no-startup-id pcmanfm
+# exec --no-startup-id LIBGL_DRI3_DISABLE=1 steam
+# exec --no-startup-id evolution
+# exec --no-startup-id sleep 3&&i3-msg "workspace 4 Chat; exec gnome-terminal -e weechat; workspace 1 Terminal"
+# exec --no-startup-id i3-msg "workspace 6 Media; exec gnome-terminal -e cmus; workspace 1 Terminal"
+# exec --no-startup-id qbittorrent
