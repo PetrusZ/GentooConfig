@@ -2,7 +2,7 @@
 
 #### Related:
 
-* [AutoBackup](https://gist.github)
+* [AutoBackup](https://github.com/PetrusZ/AutoBackup)
 * **[Using AutoBackup install Gentoo](https://gist.github.com/PetrusZ/947293692243c48fc21c744eb32f3816)**
 
 #### Tools/Package
