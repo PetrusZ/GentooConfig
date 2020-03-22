@@ -743,10 +743,11 @@ omap af <Plug>(coc-funcobj-a)
 
 " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 " 选择下一个可选区域
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
-nmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
-xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
+" FIXME: map to another key
+" nmap <silent> <TAB> <Plug>(coc-range-select)
+" xmap <silent> <TAB> <Plug>(coc-range-select)
+" nmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
+" xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
