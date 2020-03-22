@@ -67,10 +67,6 @@ if [[ $# == 1 ]]; then
         bash ~/Scripts/yarn-local-install.sh
 
         # install vim plugin
-        mkdir_ifnot_exist ~/.vim/autoload
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
         mkdir_ifnot_exist ~/.vim/.backup
         mkdir_ifnot_exist ~/.vim/.swp
         mkdir_ifnot_exist ~/.vim/.undo
