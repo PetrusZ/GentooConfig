@@ -1,6 +1,13 @@
 # vim: foldmethod=marker
 #  < antigen >{{{
 # -----------------------------------------------------------------------------
+if [[ ! -e ~/.antigen/antigen.zsh ]]; then
+    if [[ ! -d ~/.antigen ]]; then
+        mkdir -p ~/.antigen
+    fi
+    curl -L git.io/antigen > ~/.antigen/antigen.zsh
+fi
+
 source ~/.antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -46,21 +53,25 @@ antigen apply
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # User configuration
-PATH_LOCAL="/home/petrus/.local/bin"
-PATH_NODE_LOCAL="/home/petrus/.local/node_modules/.bin"
-PATH_GO_LOCAL="/home/petrus/.local/go/bin"
+if [[ $UID != 0 ]]; then
+    PATH_LOCAL="/home/petrus/.local/bin"
+    PATH_NODE_LOCAL="/home/petrus/.local/node_modules/.bin"
+    PATH_GO_LOCAL="/home/petrus/.local/go/bin"
+fi
 PATH_DISTCC="/usr/lib/distcc/bin:"
 export PATH="/usr/sbin:/usr/local/sbin:/sbin:${PATH_LOCAL}:${PATH_NODE_LOCAL}:${PATH_GO_LOCAL}:${PATH}"
 export FPATH="/usr/share/zsh/site-contrib:${FPATH}"
 export GOPATH=$HOME/.local/go
 export EDITOR="vim"
 
-export GPG_TTY=$(tty)
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+if [[ $UID != 0 ]]; then
+    export GPG_TTY=$(tty)
+    unset SSH_AGENT_PID
+    if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+        export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    fi
+    gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
-gpg-connect-agent updatestartuptty /bye >/dev/null
 
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down

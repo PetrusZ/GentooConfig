@@ -860,6 +860,7 @@ let g:neoformat_basic_format_trim = 1
 "
 let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_CacheDirectory = $HOME."/.cache"
+let g:Lf_RootMarkers = ['.git', '.hg', '.svn', '.root']
 " don't show the help in normal mode
 let g:Lf_HideHelp = 1
 let g:Lf_UseCache = 0

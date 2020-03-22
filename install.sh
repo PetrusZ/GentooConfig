@@ -40,6 +40,9 @@ if [[ $# == 1 ]]; then
         systemctl enable docker
         systemctl enable privoxy
         systemctl enable betterlockscreen@$USER
+
+        ln -s /home/petrus/.zshrc /root/.zshrc
+        ln -s /home/petrus/.gitconfig /root/.gitconfig
     fi
 
     if [[ $1 == 'user' ]]; then
@@ -74,10 +77,6 @@ if [[ $# == 1 ]]; then
         mkdir_ifnot_exist ~/.vim/.info
 
         # Open vim and type `:PlugInstall`
-
-        # install zsh plugin
-        mkdir_ifnot_exist ~/.antigen
-        curl -L git.io/antigen > ~/.antigen/antigen.zsh
 
         # install tmux plugin
         mkdir_ifnot_exist ~/.tmux/plugins

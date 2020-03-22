@@ -84,6 +84,7 @@
         "python"
     ],
     "coc.preferences.snippetStatusText": "Ⓢ ",
+    "coc.preferences.rootPatterns": [".git", ".hg", ".projections.json", ".root"],
 
     "diagnostic.signOffset": 9999999,
     "diagnostic.errorSign": "●",
