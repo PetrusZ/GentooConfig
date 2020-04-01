@@ -355,7 +355,7 @@ set confirm                                         " 关闭时如果存在未�
 set scrolloff=5                                     " 距离顶部或底部还有5行的时候就开始滚动屏幕
 set conceallevel=2                                  " 可隐藏文字等级
 set concealcursor=c                                 " 在什么模式下光标所在行会被隐藏
-set updatetime=100                                  " swp与CursorHold autocmd的更新时间，目前主要用于gitgutter插件更新速度
+set updatetime=200                                  " swp与CursorHold autocmd的更新时间，目前主要用于gitgutter插件更新速度
 set wildmenu                                        " 在编辑命令行时，按补全键后，临时在状态栏位置显示补全提示
 set autochdir                                       " 将当前路径自动切换到当前编辑的文件所在的目录
 set noshowmode                                      " 关闭mode在cmd中的提示，方便echodoc显示
@@ -740,14 +740,6 @@ xmap if <Plug>(coc-funcobj-i)
 omap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap af <Plug>(coc-funcobj-a)
-
-" Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-" 选择下一个可选区域
-" FIXME: map to another key
-" nmap <silent> <TAB> <Plug>(coc-range-select)
-" xmap <silent> <TAB> <Plug>(coc-range-select)
-" nmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
-" xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -1441,6 +1433,8 @@ let g:which_key_space_map.l =  {
             \ 'i'    :  ['<Plug>(coc-implementation)', 'Implementation'],
             \ 'r'    :  ['<Plug>(coc-references)', 'References'],
             \ 'c'    :  ['<Plug>(coc-declaration)', 'Declaration'],
+            \ 's'    :  ['<Plug>(coc-range-select)', 'Range select'],
+            \ 'S'    :  ['<Plug>(coc-range-select-backword)', 'Range select backword'],
             \ 'h'    :  [':call CocAction("doHover")', 'Hover'],
             \ }
 

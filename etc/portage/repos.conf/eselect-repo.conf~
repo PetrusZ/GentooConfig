@@ -24,11 +24,6 @@ sync-type = git
 sync-uri = https://github.com/gentoo-mirror/steam-overlay.git
 
 
-[go-overlay]
-location = /var/db/repos/go-overlay
-sync-type = git
-sync-uri = https://github.com/gentoo-mirror/go-overlay.git
-
 
 [matrix]
 location = /var/db/repos/matrix

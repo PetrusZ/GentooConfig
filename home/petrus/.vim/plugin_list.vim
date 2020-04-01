@@ -44,7 +44,7 @@ endfunction
 function! BuildCCLS(info) abort
   if a:info.status ==# 'installed' || a:info.status ==# 'updated' || a:info.force
     execute 'cd ~/.vim/plugged/ccls/'
-    !cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS=-fno-gnu-unique -DCMAKE_INSTALL_PREFIX="/home/petrus/.local"
+    !cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCLANG_LINK_CLANG_DYLIB=1 -DCMAKE_INSTALL_PREFIX="/home/petrus/.local"
     !cmake --build Release -j9
     !cmake --build Release --target install
   endif
