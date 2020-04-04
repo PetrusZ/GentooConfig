@@ -1,8 +1,9 @@
-# vim: ft=i3
+# vim: ft=i3 foldmethod=marker
 # 如果你想生成默认配置请删除此文件并运行 i3-config-wizard(1).
 # 具体配置说明请看 https://i3wm.org/docs/userguide.html
 
-#===appearance===
+#  < appearance >{{{
+# -----------------------------------------------------------------------------
 
 # 设置Mod键 这里为Super/Win键
 set $mod Mod4
@@ -43,16 +44,10 @@ gaps outer $default_gaps_outer
 
 smart_gaps on
 smart_borders on
+# -----------------------------------------------------------------------------"}}}
 
-#---wallpaper---
-
-# static mode
-exec --no-startup-id feh -Z --bg-scale /home/petrus/Pictures/gentoo/wall.png
-
-# random mode
-# exec ~/.config/i3/wallpaper.sh &
-
-#---window style---
+#  < window style >{{{
+# -----------------------------------------------------------------------------
 
 # copy from vim
 set $color_dark0_hard     #1d2021
@@ -121,8 +116,10 @@ client.background		  #ffffff
 #
 # client.background		        #1d1d1d
 
+# -----------------------------------------------------------------------------"}}}
 
-#===workspace control===
+#  < workspace control >{{{
+# -----------------------------------------------------------------------------
 
 # 设置workspace变量
 set $WS1 1 Terminal
@@ -175,7 +172,8 @@ assign [class="Telegram"] $WS3
 assign [class="Pcmanfm"] $WS4
 assign [class="mpv"] $WS5
 assign [class="Steam"] $WS6
-assign [class="Uget-gtk"] $WS7
+assign [class="Nextcloud"] $WS9
+
 # assign [class="qBittorrent"] $WS7
 
 # for_window [title=".*\.md - Chromium" class="Chromium"] move container to workspace $WS1
@@ -186,7 +184,10 @@ for_window [class="Spotify"] move to workspace $WS5
 # 指定程序默认悬浮窗口
 #for_window [class="Termite"] floating enable, resize set 700 600, move position center
 
-#===window control===
+# -----------------------------------------------------------------------------"}}}
+
+#  < window control >{{{
+# -----------------------------------------------------------------------------
 
 # 关闭当前窗口
 bindsym $mod+F4 kill
@@ -271,8 +272,10 @@ bindsym $mod+Shift+h split h
 bindsym $mod+v split v
 bindsym $mod+Shift+t split toggle
 
+# -----------------------------------------------------------------------------"}}}
 
-#===shortcut===
+#  < shortcut >{{{
+# -----------------------------------------------------------------------------
 
 #重载配置
 bindsym $mod+Control+c reload ; exec notify-send 'Reloaded i3 configuration.'
@@ -315,8 +318,10 @@ bindsym Control+$mod+w exec --no-startup-id "rofi -show-icons -modi windowcd,win
 
 # 切换声卡
 bindcode 198 exec /home/petrus/Scripts/switch_sound_device.sh switch
+# -----------------------------------------------------------------------------"}}}
 
-#===mode===
+#  < mode >{{{
+# -----------------------------------------------------------------------------
 
 # 调整窗口大小
 set $mode_resize resize: [j|k|h|l]
@@ -444,7 +449,10 @@ mode "$mode_mpd" {
 
 bindsym $mod+Control+p mode "$mode_mpd"
 
-#===stat bar====
+# -----------------------------------------------------------------------------"}}}
+
+#  < status bar >{{{
+# -----------------------------------------------------------------------------
 
 #状态栏
 bar {
@@ -458,7 +466,6 @@ bar {
     # status_command i3status
 
     font pango:Noto Sans , Font Awesome 5 Free Solid, Monospace, Taskbar 10
-    # font pango:Ubuntu Mono 12.5px
     separator_symbol " | "
 
     # separator_symbol "//"
@@ -483,24 +490,11 @@ bar {
       inactive_workspace $color_dark0_hard      $color_dark0_hard       $color_light4_256
       urgent_workspace   $color_bright_red      $color_bright_red       $color_light0_hard
     }
-
-    # colors {
-    #     # 想让bar变透明还需要去掉下面一行的注释并注释它下面的一行
-    #     # background        #1d2021A0
-    #     background          #282828
-    #     statusline          #DDDDDD
-    #     separator           #7addda
-
-    #     # colorclass        border      background  text
-    #     focused_workspace   #2B83A6     #2B83A6     #DDDDDD
-    #     active_workspace    #212121     #212121     #DDDDDD
-    #     inactive_workspace  #212121     #212121     #DDDDDD
-    #     urgent_workspace    #D64E4E     #D64E4E     #DDDDDD
-    # }
 }
+# -----------------------------------------------------------------------------"}}}
 
-
-#===autostart parograms===
+#  < autostart programs >{{{
+# -----------------------------------------------------------------------------
 
 # 开启鼠标中间滚动
 exec xinput set-prop "Logitech Gaming Mouse G400" "libinput Scroll Method Enabled" 0, 0, 1
@@ -508,15 +502,18 @@ exec --no-startup-id compton -cb --config ~/.config/compton.conf
 exec --no-startup-id conky -c ~/.config/conky/conky
 exec --no-startup-id conky -c ~/.config/conky/conky.shortcuts
 exec --no-startup-id fcitx
-# exec --no-startup-id xautolock -time 10 -locker "lock"
-
+exec --no-startup-id nextcloud
 exec --no-startup-id chromium
 exec --no-startup-id gnome-terminal
 exec --no-startup-id telegram-desktop
 exec --no-startup-id unclutter
-# exec --no-startup-id pcmanfm
+# exec --no-startup-id xautolock -time 10 -locker "lock"
 # exec --no-startup-id LIBGL_DRI3_DISABLE=1 steam
-# exec --no-startup-id evolution
-# exec --no-startup-id sleep 3&&i3-msg "workspace 4 Chat; exec gnome-terminal -e weechat; workspace 1 Terminal"
-# exec --no-startup-id i3-msg "workspace 6 Media; exec gnome-terminal -e cmus; workspace 1 Terminal"
-# exec --no-startup-id qbittorrent
+
+#---wallpaper---
+# static mode
+exec --no-startup-id feh -Z --bg-scale /home/petrus/Pictures/gentoo/wall.png
+# random mode
+# exec ~/.config/i3/wallpaper.sh &
+
+# -----------------------------------------------------------------------------"}}}

@@ -107,3 +107,10 @@ sys-apps/util-linux static-libs
 # required by mail-client/thunderbird-68.6.0::gentoo[system-sqlite]
 # required by thunderbird (argument)
 >=dev-db/sqlite-3.31.1 secure-delete
+# required by net-misc/nextcloud-client-2.6.4::gentoo
+# required by nextcloud-client (argument)
+>=dev-qt/qtwebengine-5.14.1 widgets
+# required by dev-qt/qtwebengine-5.14.1::gentoo
+# required by net-misc/nextcloud-client-2.6.4::gentoo
+# required by nextcloud-client (argument)
+>=dev-qt/qtwebchannel-5.14.1 qml

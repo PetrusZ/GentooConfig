@@ -4,7 +4,6 @@ docopt
 Flask
 future
 itsdangerous
-mycli
 Markdown
 path-and-address
 powerline-status

@@ -59,6 +59,7 @@ app-text/tree
 app-text/wgetpaste
 app-text/zathura
 app-text/zathura-pdf-poppler
+dev-db/mycli
 dev-libs/libinput
 dev-libs/protobuf
 dev-libs/rapidjson
@@ -84,6 +85,7 @@ dev-util/vint
 dev-vcs/git-extras
 games-roguelike/nethack
 lxde-base/lxappearance
+mail-client/sylpheed
 mail-mta/postfix
 media-fonts/fontawesome
 media-fonts/hack
@@ -117,11 +119,11 @@ net-fs/nfstest
 net-ftp/ncftp
 net-im/telegram-desktop
 net-irc/hexchat
-net-irc/irccloud-desktop
 net-irc/weechat
 net-misc/aria2
 net-misc/baidunetdisk
 net-misc/networkmanager
+net-misc/nextcloud-client
 net-misc/proxychains
 net-misc/remmina
 net-misc/sshpass

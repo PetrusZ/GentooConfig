@@ -20,6 +20,7 @@ dev-util/global vim
 dev-lang/python sqlite
 dev-lang/ghc binary
 dev-java/oracle-jdk-bin javafx
+dev-qt/qtwebengine jumbo-build
 x11-wm/awesome -gnome
 x11-misc/lightdm -gnome
 x11-misc/rofi windowmode
