@@ -121,6 +121,9 @@ client.background		  #ffffff
 #  < workspace control >{{{
 # -----------------------------------------------------------------------------
 
+# 设置workspace默认layout
+# workspace_layout tabbed
+
 # 设置workspace变量
 set $WS1 1 Terminal
 set $WS2 2 Chromium
@@ -169,6 +172,7 @@ bindsym $mod+Control+0 move container to workspace $WS0
 #指定工作区，通过xprop命令查看名称
 assign [class="Chromium"] $WS2
 assign [class="Telegram"] $WS3
+assign [class="Hexchat"] $WS3
 assign [class="Pcmanfm"] $WS4
 assign [class="mpv"] $WS5
 assign [class="Steam"] $WS6
@@ -179,6 +183,7 @@ assign [class="Nextcloud"] $WS9
 # for_window [title=".*\.md - Chromium" class="Chromium"] move container to workspace $WS1
 for_window [class="libreoffice.*"] move to workspace $WS4
 for_window [class="Spotify"] move to workspace $WS5
+for_window [class="Hexchat"] layout tabbed
 
 
 # 指定程序默认悬浮窗口
@@ -506,6 +511,7 @@ exec --no-startup-id nextcloud
 exec --no-startup-id chromium
 exec --no-startup-id gnome-terminal
 exec --no-startup-id telegram-desktop
+exec --no-startup-id hexchat
 exec --no-startup-id unclutter
 # exec --no-startup-id xautolock -time 10 -locker "lock"
 # exec --no-startup-id LIBGL_DRI3_DISABLE=1 steam

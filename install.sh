@@ -29,6 +29,8 @@ if [[ $# == 1 ]]; then
         mkdir -p /etc/portage/postsync.d
         cp /usr/bin/eix-update /etc/portage/postsync.d
 
+        newaliases
+
         timedatectl set-ntp true
         timedatectl set-timezone Asia/Shanghai
 

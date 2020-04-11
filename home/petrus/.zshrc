@@ -139,6 +139,8 @@ alias yarn='yarn --cwd ~/.local'
 
 alias glances='glances --enable-plugin connections,diskio,docker,cloud,floders,fs,ip,sensors,smart,wifi,system,quicklook,alert'
 
+alias proxychains='proxychains -q'
+
 unalias fd
 # -----------------------------------------------------------------------------"}}}
 

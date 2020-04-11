@@ -453,7 +453,7 @@ augroup Petrus
     " autocmd BufRead,BufNewFile *.conf		set filetype=conf
 
     " disable Coc completion in vimwiki
-    autocmd FileType vimwiki let b:coc_suggest_disable = 1
+    autocmd FileType vimwiki let b:coc_suggest_disable = 1 | silent! unmap <buffer> <leader>wh| silent! unmap <buffer> <leader>whh
     " autocmd FileType vimwiki execute "silent! CocDisable"
     " 保存时自动删除空白
     autocmd BufWritePre * | undojoin | FixWhitespace
@@ -1217,31 +1217,19 @@ let g:startify_lists = [
 " <C-D> 降低List项目等级
 " ":VimwikiSearchTags 在wiki查找给定标签的所有位置
 
-silent! unmap <leader>wh
-
-let g:tagbar_type_vimwiki = {
-          \   'ctagstype':'vimwiki'
-          \ , 'kinds':['h:header']
-          \ , 'sro':'&&&'
-          \ , 'kind2scope':{'h':'header'}
-          \ , 'sort':0
-          \ , 'ctagsbin':'/home/petrus/vimwiki/vwtags.py'
-          \ , 'ctagsargs': 'markdown'
-          \ }
-
 let g:vimwiki_list = [{
-            \ 'path_html':'/home/petrus/vimwiki/html',
-            \ 'template_path':'/home/petrus/vimwiki/html/assets/',
+            \ 'path_html':'~/vimwiki/html',
+            \ 'template_path':'~/vimwiki/templates',
             \ 'template_default': 'default',
             \ 'template_ext': '.tpl',
             \ 'syntax': 'markdown',
             \ 'ext': '.md',
-            \ 'nested_syntaxes': {'python': 'python', 'c++': 'cpp', 'bash': 'sh', 'xmodmap': 'xmodmap'},
-            \ 'custom_wiki2html': '/home/petrus/.vim/autoload/wiki2html.sh',
+            \ 'custom_wiki2html': 'vimwiki_markdown',
             \ 'list_margin': 0,
             \ 'auto_tags': 1,
             \ 'auto_export': 0
             \ }]
+
 let g:custom_wiki2html_args = 'null'
 let g:vimwiki_global_ext = 0
 let g:vimwiki_hl_cb_checked = 1

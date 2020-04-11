@@ -4,6 +4,7 @@ app-admin/conky vim-syntax
 app-editors/emacs xft
 app-editors/vim python terminal cscope
 app-editors/gvim python terminal cscope
+app-emulation/libvirt -libvirtd -qemu
 app-shells/fzf tmux vim zsh-completion
 app-portage/layman sync-plugin-portage git
 app-misc/task vim-syntax zsh-completion
@@ -32,17 +33,4 @@ sys-boot/woeusb minimal
 sys-devel/gcc lto pgo
 sys-kernel/gentoo-sources experimental symlink
 www-client/chromium widevine jumbo-build -gnome-keyring
-www-client/uget aria2
 media-libs/harfbuzz icu
-# required by www-client/chromium-64.0.3282.140::gentoo
-# required by www-client/chromium (argument)
-#>=dev-libs/libxml2-2.9.7 icu
-# required by www-client/chromium-64.0.3282.140::gentoo
-# required by www-client/chromium (argument)
-#>=sys-libs/zlib-1.2.11-r1 minizip
-# required by app-misc/neofetch-3.3.0::gentoo[X]
-# required by app-misc/neofetch (argument)
-#>=www-client/w3m-0.5.3-r9 imlib
-# required by www-client/uget-2.2.0::gentoo[aria2]
-# required by uget (argument)
-#>=net-misc/aria2-1.33.1 xmlrpc

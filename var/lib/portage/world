@@ -19,6 +19,8 @@ app-editors/gvim
 app-editors/vim
 app-emulation/docker
 app-emulation/docker-compose
+app-emulation/virt-manager
+app-emulation/virt-viewer
 app-eselect/eselect-repository
 app-i18n/fcitx
 app-i18n/fcitx-cloudpinyin
@@ -134,6 +136,7 @@ sci-mathematics/calc
 sys-apps/bat
 sys-apps/dmidecode
 sys-apps/fd
+sys-apps/flatpak
 sys-apps/gsmartcontrol
 sys-apps/lm-sensors
 sys-apps/mlocate
@@ -178,6 +181,8 @@ x11-misc/unclutter
 x11-misc/xclip
 x11-terms/alacritty
 x11-terms/gnome-terminal
+x11-themes/arc-icon-theme
+x11-themes/arc-theme
 x11-themes/materia-theme
 x11-themes/sound-theme-freedesktop
 x11-wm/i3-gaps
