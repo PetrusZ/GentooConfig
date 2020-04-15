@@ -20,7 +20,6 @@ app-editors/vim
 app-emulation/docker
 app-emulation/docker-compose
 app-emulation/virt-manager
-app-emulation/virt-viewer
 app-eselect/eselect-repository
 app-i18n/fcitx
 app-i18n/fcitx-cloudpinyin
@@ -86,6 +85,7 @@ dev-util/strace
 dev-util/vint
 dev-vcs/git-extras
 games-roguelike/nethack
+games-util/xow
 lxde-base/lxappearance
 mail-client/sylpheed
 mail-mta/postfix
@@ -147,6 +147,7 @@ sys-apps/the_silver_searcher
 sys-apps/usbutils
 sys-apps/yarn
 sys-boot/grub:2
+sys-boot/woeusb
 sys-devel/clang
 sys-devel/gcc
 sys-devel/gdb
@@ -154,6 +155,7 @@ sys-firmware/intel-microcode
 sys-fs/dosfstools
 sys-fs/fuse
 sys-fs/ntfs3g
+sys-kernel/dkms
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
 sys-power/acpi

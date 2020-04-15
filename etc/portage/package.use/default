@@ -4,7 +4,8 @@ app-admin/conky vim-syntax
 app-editors/emacs xft
 app-editors/vim python terminal cscope
 app-editors/gvim python terminal cscope
-app-emulation/libvirt -libvirtd -qemu
+app-emulation/libvirt policykit virt-network
+app-emulation/qemu spice usbredir
 app-shells/fzf tmux vim zsh-completion
 app-portage/layman sync-plugin-portage git
 app-misc/task vim-syntax zsh-completion
@@ -13,9 +14,10 @@ media-sound/mpd audiofile
 media-sound/ncmpcpp clock visualizer
 media-video/mpv bluray vaapi zsh-completion
 media-fonts/source-han-sans L10N: ja ko zh-TW
+net-analyzer/wireshark qt5
 net-irc/hexchat libcanberra
 net-misc/aria2 bittorrent -metalink
-net-misc/remmina ssh vnc rdp
+net-misc/remmina ssh vnc rdp spice
 dev-util/ctags json yaml
 dev-util/global vim
 dev-lang/python sqlite

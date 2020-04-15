@@ -114,3 +114,9 @@ sys-apps/util-linux static-libs
 # required by app-emulation/virt-manager-2.2.1-r2::gentoo[gtk]
 # required by virt-manager (argument)
 >=net-misc/spice-gtk-0.37-r2 usbredir
+# required by sys-boot/woeusb-3.3.1::gentoo
+# required by woeusb (argument)
+>=sys-boot/grub-2.05_alpha20200310 grub_platforms_pc
+# required by app-emulation/libvirt-6.1.0::gentoo[virt-network]
+# required by libvirt (argument)
+>=net-dns/dnsmasq-2.80-r1 script

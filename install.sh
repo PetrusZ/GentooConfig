@@ -35,19 +35,19 @@ if [[ $# == 1 ]]; then
         timedatectl set-timezone Asia/Shanghai
 
         # Enable systemd services
+        systemctl enable bluetooth
         systemctl enable NetworkManager
         systemctl enable syslog-ng@default
         systemctl enable cronie
         systemctl enable lightdm
         systemctl enable sshd
         systemctl enable postfix
-        systemctl enable dictd
         systemctl enable docker
         systemctl enable privoxy
         systemctl enable betterlockscreen@$USER
+        systemctl enable xow.service
 
         ln -s /home/petrus/.zshrc /root/.zshrc
-        ln -s /home/petrus/.gitconfig /root/.gitconfig
     fi
 
     if [[ $1 == 'user' ]]; then
@@ -55,9 +55,6 @@ if [[ $# == 1 ]]; then
             echo "THIS COMMAND NEED RUN AS USER!"
             exit 1
         fi
-
-        # git config
-        bash ~/Scripts/git_config.sh
 
         # aria2
         touch ~/.aria2/aria2.session
