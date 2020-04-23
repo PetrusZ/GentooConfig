@@ -1,0 +1,51 @@
+defaults
+auth	on
+tls	on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile	~/.config/msmtp/msmtp.log
+
+
+account gitea
+host smtp.yandex.com
+port 587
+from gitea@codeplayer.org
+user gitea@codeplayer.org
+passwordeval "pass mutt-wizard-gitea"
+
+
+
+account watchtower
+host smtp.yandex.com
+port 587
+from watchtower@codeplayer.org
+user watchtower@codeplayer.org
+passwordeval "pass mutt-wizard-watchtower"
+
+
+
+
+
+
+
+
+
+account silencly07
+host smtp.gmail.com
+port 587
+proxy_host 192.168.2.1
+proxy_port 23457
+from silencly07@gmail.com
+user silencly07@gmail.com
+passwordeval "pass mutt-wizard-silencly07"
+
+
+account petrus
+host smtp.gmail.com
+port 587
+proxy_host 192.168.2.1
+proxy_port 23457
+from petrus.zy.07@gmail.com
+user petrus.zy.07@gmail.com
+passwordeval "pass mutt-wizard-petrus"
+
+

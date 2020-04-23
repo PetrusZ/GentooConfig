@@ -10,6 +10,7 @@ app-shells/fzf tmux vim zsh-completion
 app-portage/layman sync-plugin-portage git
 app-misc/task vim-syntax zsh-completion
 app-i18n/fcitx gtk2 gtk3
+mail-filter/maildrop authlib
 media-sound/mpd audiofile
 media-sound/ncmpcpp clock visualizer
 media-video/mpv bluray vaapi zsh-completion

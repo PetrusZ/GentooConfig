@@ -63,6 +63,7 @@ export PATH="/usr/sbin:/usr/local/sbin:/sbin:${PATH_LOCAL}:${PATH_NODE_LOCAL}:${
 export FPATH="/usr/share/zsh/site-contrib:${FPATH}"
 export GOPATH=$HOME/.local/go
 export EDITOR="vim"
+export BROWSER="chromium"
 
 if [[ $UID != 0 ]]; then
     export GPG_TTY=$(tty)

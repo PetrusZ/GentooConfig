@@ -14,6 +14,7 @@ app-dicts/stardict-ecdict-en-zh
 app-dicts/stardict-langdao-en-zh-gb
 app-dicts/stardict-langdao-zh-en-gb
 app-dicts/stardict-oxford-en-zh-gb
+app-dicts/translator
 app-editors/emacs
 app-editors/gvim
 app-editors/vim
@@ -26,6 +27,7 @@ app-i18n/fcitx-cloudpinyin
 app-i18n/fcitx-configtool
 app-i18n/fcitx-libpinyin
 app-i18n/fcitx-qt5
+app-misc/abook
 app-misc/colordiff
 app-misc/evemu
 app-misc/jq
@@ -35,6 +37,7 @@ app-misc/task
 app-misc/tealdeer
 app-misc/tmux
 app-misc/tusk
+app-misc/urlview
 app-misc/xmind
 app-office/libreoffice
 app-portage/cpuid2cpuflags
@@ -54,6 +57,7 @@ app-shells/zsh
 app-shells/zsh-completions
 app-text/dos2unix
 app-text/evince
+app-text/goldendict
 app-text/pandoc
 app-text/sdcv
 app-text/tree
@@ -87,8 +91,10 @@ dev-vcs/git-extras
 games-roguelike/nethack
 games-util/xow
 lxde-base/lxappearance
-mail-client/sylpheed
-mail-mta/postfix
+mail-client/mutt-wizard
+mail-client/neomutt
+mail-filter/maildrop
+mail-mta/msmtp
 media-fonts/fontawesome
 media-fonts/hack
 media-fonts/noto
@@ -124,6 +130,7 @@ net-irc/hexchat
 net-irc/weechat
 net-misc/aria2
 net-misc/baidunetdisk
+net-misc/baidupcs-go
 net-misc/networkmanager
 net-misc/nextcloud-client
 net-misc/proxychains

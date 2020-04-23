@@ -1,0 +1,113 @@
+
+IMAPStore gitea-remote
+Host imap.yandex.com
+Port  993
+User gitea@codeplayer.org
+PassCmd "pass mutt-wizard-gitea"
+SSLType IMAPS
+AuthMech LOGIN
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore gitea-local
+Subfolders Verbatim
+Path ~/.local/share/mail/gitea/
+Inbox ~/.local/share/mail/gitea/INBOX
+Flatten .
+
+Channel gitea
+Expunge Both
+Master :gitea-remote:
+Slave :gitea-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+
+IMAPStore watchtower-remote
+Host imap.yandex.com
+Port  993
+User watchtower@codeplayer.org
+PassCmd "pass mutt-wizard-watchtower"
+SSLType IMAPS
+AuthMech LOGIN
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore watchtower-local
+Subfolders Verbatim
+Path ~/.local/share/mail/watchtower/
+Inbox ~/.local/share/mail/watchtower/INBOX
+Flatten .
+
+Channel watchtower
+Expunge Both
+Master :watchtower-remote:
+Slave :watchtower-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+
+
+
+
+
+
+
+IMAPStore silencly07-remote
+Host imap.gmail.com
+Port  993
+User silencly07@gmail.com
+PassCmd "pass mutt-wizard-silencly07"
+SSLType IMAPS
+AuthMech LOGIN
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore silencly07-local
+Subfolders Verbatim
+Path ~/.local/share/mail/silencly07/
+Inbox ~/.local/share/mail/silencly07/INBOX
+Flatten .
+
+Channel silencly07
+Expunge Both
+Master :silencly07-remote:
+Slave :silencly07-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+IMAPStore petrus-remote
+Host imap.gmail.com
+Port  993
+User petrus.zy.07@gmail.com
+PassCmd "pass mutt-wizard-petrus"
+SSLType IMAPS
+AuthMech LOGIN
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore petrus-local
+Subfolders Verbatim
+Path ~/.local/share/mail/petrus/
+Inbox ~/.local/share/mail/petrus/INBOX
+Flatten .
+
+Channel petrus
+Expunge Both
+Master :petrus-remote:
+Slave :petrus-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
