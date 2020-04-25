@@ -1,4 +1,4 @@
-### Backup for gentoo, i3, vim and personal configure files
+### Backup for gentoo, i3, vim and personal config files
 
 #### Related:
 
@@ -11,17 +11,9 @@ gentoo
 
 i3-gaps & py3status
 
-vim & plugin
-
-zsh & antigen
-
-tmux & tpm
-
 dunst & rofi
 
-conky & ncmpcpp
-
-Nerdfonts
+conky & Nerdfonts
 
 etc.
 

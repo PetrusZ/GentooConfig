@@ -176,6 +176,7 @@ assign [class="Hexchat"] $WS3
 assign [class="Pcmanfm"] $WS4
 assign [class="mpv"] $WS5
 assign [class="Steam"] $WS6
+assign [class="GoldenDict"] $WS9
 assign [class="Nextcloud"] $WS9
 
 # assign [class="qBittorrent"] $WS7
@@ -513,8 +514,9 @@ exec --no-startup-id gnome-terminal
 exec --no-startup-id telegram-desktop
 exec --no-startup-id hexchat
 exec --no-startup-id unclutter
-# exec --no-startup-id xautolock -time 10 -locker "lock"
-# exec --no-startup-id LIBGL_DRI3_DISABLE=1 steam
+exec --no-startup-id goldendict
+exec --no-startup-id xautolock -time 15 -notify 10 -notifier "notify-send" -locker "/home/petrus/Scripts/auto_lock_screen.sh"
+exec --no-startup-id /usr/bin/gpg-agent --daemon
 
 #---wallpaper---
 # static mode

@@ -76,14 +76,14 @@ if [[ $# == 1 ]]; then
 
         # Open vim and type `:PlugInstall`
 
-        # install tmux plugin
-        mkdir_ifnot_exist ~/.tmux/plugins
-        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-        # Open tmux and press prefix + I (capital i, as in Install) to fetch the plugin.
+        # # install tmux plugin
+        # mkdir_ifnot_exist ~/.tmux/plugins
+        # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        # # Open tmux and press prefix + I (capital i, as in Install) to fetch the plugin.
 
-        # Enable systemd user services
-        systemctl enable --user mpd
-        systemctl enable --user aria2c
+        # # Enable systemd user services
+        # systemctl enable --user mpd
+        # systemctl enable --user aria2c
 
         betterlockscreen -u  ~/Pictures/gentoo/lock.jpg
     fi

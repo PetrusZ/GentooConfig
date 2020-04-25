@@ -93,7 +93,6 @@ games-util/xow
 lxde-base/lxappearance
 mail-client/mutt-wizard
 mail-client/neomutt
-mail-filter/maildrop
 mail-mta/msmtp
 media-fonts/fontawesome
 media-fonts/hack
@@ -162,7 +161,6 @@ sys-firmware/intel-microcode
 sys-fs/dosfstools
 sys-fs/fuse
 sys-fs/ntfs3g
-sys-kernel/dkms
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
 sys-power/acpi
@@ -187,9 +185,11 @@ x11-misc/pcmanfm
 x11-misc/py3status
 x11-misc/rofi
 x11-misc/unclutter
+x11-misc/xautolock
 x11-misc/xclip
 x11-terms/alacritty
 x11-terms/gnome-terminal
+x11-terms/xterm
 x11-themes/arc-icon-theme
 x11-themes/arc-theme
 x11-themes/materia-theme
