@@ -1,7 +1,7 @@
 app-arch/p7zip -wxwidgets
 app-arch/file-roller -nautilus -packagekit
 app-admin/conky vim-syntax
-app-editors/emacs xft
+app-editors/emacs xft dynamic-loading
 app-editors/vim python terminal cscope
 app-editors/gvim python terminal cscope
 app-emulation/libvirt policykit virt-network
@@ -31,6 +31,7 @@ x11-wm/awesome -gnome
 x11-misc/lightdm -gnome
 x11-misc/rofi windowmode
 x11-misc/dunst dunstify
+x11-misc/compton python_targets_python3_6
 x11-terms/gnome-terminal -gnome-shell -nautilus
 sys-apps/systemd cgroup-hybrid
 sys-apps/portage rsync-verify

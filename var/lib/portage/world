@@ -89,7 +89,6 @@ dev-util/strace
 dev-util/vint
 dev-vcs/git-extras
 games-roguelike/nethack
-games-util/xow
 lxde-base/lxappearance
 mail-client/mutt-wizard
 mail-client/neomutt
@@ -97,6 +96,7 @@ mail-mta/msmtp
 media-fonts/fontawesome
 media-fonts/hack
 media-fonts/noto
+media-fonts/noto-cjk
 media-fonts/noto-emoji-bin
 media-fonts/powerline-symbols
 media-fonts/source-code-pro
@@ -106,6 +106,7 @@ media-gfx/flameshot
 media-gfx/scrot
 media-gfx/viewnior
 media-sound/alsa-utils
+media-sound/mpc
 media-sound/mpd
 media-sound/ncmpcpp
 media-sound/spotify
@@ -163,6 +164,7 @@ sys-fs/fuse
 sys-fs/ntfs3g
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
+sys-kernel/xow
 sys-power/acpi
 sys-power/cpupower
 sys-power/suspend

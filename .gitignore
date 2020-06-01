@@ -15,3 +15,4 @@ home/petrus/Scripts/pt_attendance.sh
 home/petrus/.config/i3/config.jt
 etc/ssh/sshd_config
 etc/msmtprc
+etc/polkit-1/rules.d/00-mount-internal.rules

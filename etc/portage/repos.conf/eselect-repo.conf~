@@ -52,7 +52,3 @@ location = /var/db/repos/flatpak-overlay
 sync-type = git
 sync-uri = https://github.com/fosero/flatpak-overlay.git
 
-[rage]
-location = /var/db/repos/rage
-sync-type = git
-sync-uri = https://github.com/gentoo-mirror/rage.git
