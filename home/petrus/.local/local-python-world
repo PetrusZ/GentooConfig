@@ -6,10 +6,8 @@ future
 itsdangerous
 Markdown
 path-and-address
-powerline-status
 pycrypto
 pynat
 python-telegram-bot
 Werkzeug
 pyowm
-vimwiki-markdown

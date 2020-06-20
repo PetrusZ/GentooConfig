@@ -53,6 +53,7 @@ app-portage/smart-live-rebuild
 app-shells/fzf
 app-shells/gentoo-zsh-completions
 app-shells/peco
+app-shells/powerline
 app-shells/zsh
 app-shells/zsh-completions
 app-text/dos2unix
@@ -173,6 +174,7 @@ sys-process/glances
 sys-process/htop
 sys-process/lsof
 www-client/chromium
+www-client/lynx
 x11-apps/xev
 x11-apps/xinput
 x11-apps/xmodmap

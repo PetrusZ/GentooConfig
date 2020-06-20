@@ -7,16 +7,14 @@ from datetime import datetime
 
 API_key = '2033a6613824285f9da7bc278b55de50'
 unit = 'celsius'
-lat = 39.23
-lon = 106.77
 
 owm = OWM(API_key)
-observed = owm.weather_at_coords(lat, lon)
-location = observed.get_location()
-weather = observed.get_weather()
+reg = owm.city_id_registry()
+weather_mgr = owm.weather_manager()
+weather = weather_mgr.weather_at_place('Shizuishan, CN').weather
+currrent_temp = weather.temperature('celsius')["temp"]
 
-forecast = owm.three_hours_forecast(location.get_name())
-cast = forecast.get_forecast()
+forecast = weather_mgr.forecast_at_place('Shizuishan, CN', '3h')
 
 localtime = time.localtime(time.time())
 day_time = datetime(localtime.tm_year, localtime.tm_mon, localtime.tm_mday, 4,
@@ -32,14 +30,17 @@ forecast_2day = forecast.get_weather_at(day2_time)
 
 if len(sys.argv) == 2:
     if sys.argv[1] == '1day':
-        temp = weather.get_temperature(unit)['temp']
-        status = weather.get_status()
+        temp = weather.temperature(unit)['temp']
+        status = weather.status
         print(status + ' ' + str(temp))
+        #  print(weather.reference_time('iso'))
     elif sys.argv[1] == '2day':
-        temp = forecast_1day.get_temperature(unit)['temp']
-        status = forecast_1day.get_status()
+        temp = forecast_1day.temperature(unit)['temp']
+        status = forecast_1day.status
         print(status + ' ' + str(temp))
+        #  print(forecast_1day.reference_time('iso'))
     elif sys.argv[1] == '3day':
-        temp = forecast_2day.get_temperature(unit)['temp']
-        status = forecast_2day.get_status()
+        temp = forecast_2day.temperature(unit)['temp']
+        status = forecast_2day.status
         print(status + ' ' + str(temp))
+        #  print(forecast_2day.reference_time('iso'))
