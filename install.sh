@@ -29,11 +29,6 @@ if [[ $# == 1 ]]; then
         mkdir -p /etc/portage/postsync.d
         cp /usr/bin/eix-update /etc/portage/postsync.d
 
-        newaliases
-
-        timedatectl set-ntp true
-        timedatectl set-timezone Asia/Shanghai
-
         # Enable systemd services
         systemctl enable bluetooth
         systemctl enable NetworkManager
@@ -46,6 +41,7 @@ if [[ $# == 1 ]]; then
         systemctl enable privoxy
         systemctl enable betterlockscreen@$USER
         systemctl enable xow.service
+        systemctl enable ratbagd.service
 
         ln -s /home/petrus/.zshrc /root/.zshrc
     fi
@@ -80,7 +76,7 @@ if [[ $# == 1 ]]; then
 
         # # Enable systemd user services
         # systemctl enable --user mpd
-        # systemctl enable --user aria2c
+        # systemctl enable --user aria2
 
         betterlockscreen -u  ~/Pictures/gentoo/lock.jpg
     fi
