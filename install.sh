@@ -44,6 +44,8 @@ if [[ $# == 1 ]]; then
         systemctl enable ratbagd.service
 
         ln -s /home/petrus/.zshrc /root/.zshrc
+
+        eselect pinentry set pinentry-gtk-2
     fi
 
     if [[ $1 == 'user' ]]; then
