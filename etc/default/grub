@@ -29,7 +29,7 @@ GRUB_DISTRIBUTOR="Gentoo"
 GRUB_CMDLINE_LINUX="init=/usr/lib/systemd/systemd"
 
 # Append parameters to the linux kernel command line for non-recovery entries
-GRUB_CMDLINE_LINUX_DEFAULT=""
+GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=a6143c17-3957-47af-8290-13ef2f3b50e8 resume_offset=53336064"
 
 # Uncomment to disable graphical terminal (grub-pc only)
 #GRUB_TERMINAL=console

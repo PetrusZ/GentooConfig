@@ -463,7 +463,7 @@ bindsym $mod+Control+p mode "$mode_mpd"
 #状态栏
 bar {
     position bottom
-    tray_output none
+    tray_output DP-0
     status_command py3status --dbus-notify -c ~/.config/i3/i3status.conf
     # status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
