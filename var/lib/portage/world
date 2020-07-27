@@ -145,6 +145,7 @@ sys-apps/dmidecode
 sys-apps/fd
 sys-apps/flatpak
 sys-apps/gsmartcontrol
+sys-apps/hwinfo
 sys-apps/lm-sensors
 sys-apps/mlocate
 sys-apps/portage

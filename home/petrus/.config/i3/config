@@ -307,7 +307,8 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 # bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # 截图
-bindsym Print exec flameshot gui -p /home/petrus/Pictures/Screenshot -d 200
+bindsym Print exec flameshot gui -p /home/petrus/Pictures/Screenshot
+bindsym Shift+Print exec flameshot gui -p /home/petrus/Pictures/Screenshot -d 2000
 bindsym Control+Print exec flameshot full -c -p /home/petrus/Pictures/Screenshot
 
 # 切换触摸板开关
@@ -426,14 +427,15 @@ mode "$mode_gaps_outer" {
 }
 
 # Shutdown, Suspend, Lock (e)
-set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (h) shutdown
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) poweroff
 mode "$mode_system" {
   bindsym l exec betterlockscreen -l dim, mode "default"
   bindsym e exec i3-msg exit, mode "default"
   # bindsym s exec betterlockscreen -s dim, mode "default"
   bindsym s exec systemctl suspend, mode "default"
   bindsym r exec systemctl reboot, mode "default"
-  bindsym h exec systemctl poweroff, mode "default"
+  # bindsym h exec systemctl hibernate, mode "default"
+  bindsym p exec systemctl poweroff, mode "default"
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
@@ -515,7 +517,7 @@ exec --no-startup-id telegram-desktop
 exec --no-startup-id hexchat
 exec --no-startup-id unclutter
 exec --no-startup-id goldendict
-exec --no-startup-id xautolock -time 15 -notify 10 -notifier "notify-send" -locker "/home/petrus/Scripts/auto_lock_screen.sh"
+exec --no-startup-id xautolock -time 15 -notify 10 -notifier "notify-send 'locking screen in 10 seconds!'" -locker "/home/petrus/Scripts/auto_lock_screen.sh"
 exec --no-startup-id /usr/bin/gpg-agent --daemon
 
 #---wallpaper---
