@@ -13,5 +13,5 @@ post_pkg_postinst() {
         genkernel kernel
     fi
 
-    eclean-kernel -n 2
+    eclean-kernel -n 4
 }

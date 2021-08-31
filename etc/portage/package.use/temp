@@ -1,1 +1,2 @@
 #net-wireless/bluez -obex -cups
+#sys-libs/ncurses -gpm

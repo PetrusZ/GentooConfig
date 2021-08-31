@@ -5,38 +5,51 @@ app-editors/emacs xft dynamic-loading
 app-editors/vim python terminal cscope
 app-editors/gvim python terminal cscope
 app-emulation/libvirt policykit virt-network
-app-emulation/qemu spice usbredir
+app-emulation/qemu spice usbredir virgl
 app-shells/fzf tmux vim zsh-completion
 app-portage/layman sync-plugin-portage git
 app-misc/task vim-syntax zsh-completion
 app-text/goldendict ffmpeg
 app-i18n/fcitx gtk2 gtk3
 mail-client/neomutt gpgme
+media-tv/kodi bluray david nfs samba udf vaapi vdpau
 media-sound/mpd audiofile
 media-sound/ncmpcpp clock visualizer
 media-video/mpv bluray vaapi zsh-completion
+media-video/vlc archive aribsub bluray vaapi vdpau x265 libass fontconfig samba nfs matroska kate libtiger zvbi
 media-video/ffmpeg mp3 speex
 media-fonts/source-han-sans L10N: ja ko zh-TW
+media-gfx/displaycal python_targets_python2_7
+media-libs/libbluray java
 net-analyzer/wireshark qt5
 net-irc/hexchat libcanberra
 net-misc/aria2 bittorrent -metalink
 net-misc/remmina ssh vnc rdp spice
+dev-python/certifi-python2 python_targets_python2_7
 dev-util/ctags json yaml
 dev-util/global vim
+dev-util/vint python_targets_python3_8
 dev-lang/python sqlite
 dev-lang/ghc binary
 dev-java/oracle-jdk-bin javafx
+dev-qt/qt-creator beautifer cmake cppcheck doc git lsp silversearcher
 dev-qt/qtwebengine jumbo-build
+gnome-base/gvfs fuse nfs samba
+x11-drivers/nvidia-drivers uvm
 x11-wm/awesome -gnome
 x11-misc/lightdm -gnome
 x11-misc/rofi windowmode
 x11-misc/dunst dunstify
-x11-misc/compton python_targets_python3_6
+x11-misc/optimus-manager lightdm
 x11-terms/gnome-terminal -gnome-shell -nautilus
+xfce-extra/thunar-vcs-plugin -subversion
+xfce-extra/tumbler ffmpeg raw
 sys-apps/systemd cgroup-hybrid
 sys-apps/portage rsync-verify
+sys-block/fio aio
 sys-boot/woeusb minimal
 sys-devel/gcc lto pgo
 sys-kernel/gentoo-sources experimental symlink
-www-client/chromium widevine jumbo-build -gnome-keyring
+sci-libs/libqalculate curl
+www-client/chromium vaapi widevine jumbo-build -gnome-keyring
 media-libs/harfbuzz icu

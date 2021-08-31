@@ -5,19 +5,61 @@
 
 current_sink=$(pactl info | grep "Default Sink" | awk '{print $3}')
 current_source=$(pactl info | grep "Default Source" | awk '{print $3}')
-is_soundbar=$(pactl info | grep "Default Sink" | awk '{print $3}' | grep -i SoundBar)
 
-headphone_sink_id=$(pactl list short sinks | grep -vi SoundBar | awk '{print $1}')
-soundbar_sink_id=$(pactl list short sinks | grep -i SoundBar | awk '{print $1}')
-headphone_source_id=$(pactl list short sources | grep -vi SoundBar | awk '{print $1}')
-soundbar_source_id=$(pactl list short sources | grep -i SoundBar | grep -i output | awk '{print $1}')
+declare next_sink
+declare next_source
 
-# echo "current_sink: $current_sink"
-# echo "is_soundbar: $is_soundbar"
-# echo "headphone_sink_id: $headphone_sink_id"
-# echo "headphone_source_id: $headphone_source_id"
-# echo "soundbar_sink_id: $soundbar_sink_id"
-# echo "soundbar_source_id: $soundbar_source_id"
+function read_sink_source {
+    is_current=0
+    next_sink=0
+    while read line
+    do
+        # echo $line
+        id=$(echo $line | awk '{print $1}')
+        name=$(echo $line | awk '{print $2}')
+
+        if [[ $is_current == 1 ]]; then
+            next_sink=$name
+            break
+        fi
+
+        if [[ $name == $current_sink ]]; then
+            is_current=1
+            # echo $name
+        fi
+        # echo $next_sink
+    done < <(pactl list short sinks)
+
+    if [[ $next_sink == 0 ]]; then
+        next_sink=$(pactl list short sinks | awk '{print $2}' | head -n1)
+    fi
+    # echo $next_sink
+
+    is_current=0
+    next_source=0
+    while read line
+    do
+        # echo $line
+        id=$(echo $line | awk '{print $1}')
+        name=$(echo $line | awk '{print $2}')
+
+        if [[ $is_current == 1 ]]; then
+            next_source=$name
+            break
+        fi
+
+        if [[ $name == $current_source ]]; then
+            is_current=1
+            # echo $name
+        fi
+        # echo $next_source
+    done < <(pactl list short sources)
+
+    if [[ $next_source == 0 ]]; then
+        next_source=$(pactl list short sources | awk '{print $2}' | head -n1)
+    fi
+    # echo $next_source
+}
 
 function switch_sound_device {
     sink_id=$1
@@ -43,20 +85,23 @@ do
 done
 }
 
-if [ $1 ] && [ $1 == 'switch' ]; then
-    if [ $is_soundbar ]; then
-        # 目前为默认SoundBar，设置耳机为默认sink
-        switch_sound_device $headphone_sink_id $headphone_source_id
-    else
-        # 目前为默认耳机，设置soundbar为默认sink
-        switch_sound_device $soundbar_sink_id $soundbar_source_id
-    fi
-else
-    if [ $is_soundbar ]; then
+function echo_icon() {
+    if [ $(pactl info | grep "Default Sink" | awk '{print $3}' | grep -i "hdmi") ]; then
         # soundbar
-       echo "󰀃"
-   else
-       # headphone
-       echo ""
+        echo "󰀃"
+    elif [ $(pactl info | grep "Default Sink" | awk '{print $3}' | grep -i "analog") ]; then
+        # headphone
+        echo ""
+    elif [ $(pactl info | grep "Default Sink" | awk '{print $3}' | grep -i "bluez") ]; then
+        # bluetooth
+        echo ""
     fi
+}
+
+read_sink_source
+
+if [ $1 ] && [ $1 == 'switch' ]; then
+    switch_sound_device $next_sink $next_source
+else
+    echo_icon
 fi

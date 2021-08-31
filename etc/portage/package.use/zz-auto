@@ -83,7 +83,7 @@ sys-apps/util-linux static-libs
 # required by x11-wm/i3-gaps-4.17.1-r1::gentoo
 # required by @selected
 # required by @world (argument)
->=x11-base/xcb-proto-1.13 abi_x86_32 python_targets_python3_7
+>=x11-base/xcb-proto-1.13 abi_x86_32 python_targets_python3_8
 # required by www-client/chromium-80.0.3987.66::gentoo
 # required by chromium (argument)
 >=net-libs/nodejs-13.7.0-r1 inspector
@@ -219,74 +219,74 @@ sys-apps/util-linux static-libs
 # required by app-crypt/gkeys-0.2::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/ssl-fetch-0.4 python_targets_python3_6
+>=dev-python/ssl-fetch-0.4 python_targets_python3_8
 # required by dev-python/ssl-fetch-0.4::gentoo
 # required by app-portage/mirrorselect-2.2.6-r1::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/requests-2.23.0 python_targets_python3_6
+>=dev-python/requests-2.23.0 python_targets_python3_8
 # required by dev-python/requests-2.23.0::gentoo
 # required by dev-python/docker-py-4.2.0-r1::gentoo
 # required by app-emulation/docker-compose-1.25.5::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/certifi-2020.4.5.1 python_targets_python3_6
+>=dev-python/certifi-2020.4.5.1 python_targets_python3_8
 # required by dev-python/requests-2.23.0::gentoo
 # required by dev-python/docker-py-4.2.0-r1::gentoo
 # required by app-emulation/docker-compose-1.25.5::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/chardet-3.0.4 python_targets_python3_6
+>=dev-python/chardet-3.0.4 python_targets_python3_8
 # required by dev-python/requests-2.23.0::gentoo
 # required by dev-python/docker-py-4.2.0-r1::gentoo
 # required by app-emulation/docker-compose-1.25.5::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/idna-2.9 python_targets_python3_6
+>=dev-python/idna-2.9 python_targets_python3_8
 # required by dev-python/requests-2.23.0::gentoo
 # required by dev-python/docker-py-4.2.0-r1::gentoo
 # required by app-emulation/docker-compose-1.25.5::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/urllib3-1.25.9 python_targets_python3_6
+>=dev-python/urllib3-1.25.9 python_targets_python3_8
 # required by dev-python/pyopenssl-19.1.0::gentoo
 # required by dev-python/service_identity-18.1.0::gentoo
 # required by dev-python/twisted-20.3.0::gentoo[crypt]
 # required by dev-python/python-mpd-1.0.0::gentoo[-test,twisted]
 # required by @selected
 # required by @world (argument)
->=dev-python/cryptography-2.9 python_targets_python3_6
+>=dev-python/cryptography-2.9 python_targets_python3_8
 # required by dev-python/requests-2.23.0::gentoo[ssl]
 # required by dev-python/docker-py-4.2.0-r1::gentoo
 # required by app-emulation/docker-compose-1.25.5::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/pyopenssl-19.1.0 python_targets_python3_6
+>=dev-python/pyopenssl-19.1.0 python_targets_python3_8
 # required by dev-python/pyGPG-0.2::gentoo
 # required by app-crypt/gkeys-0.2::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/setuptools-46.4.0 python_targets_python3_6
+>=dev-python/setuptools-46.4.0 python_targets_python3_8
 # required by dev-python/pyopenssl-19.1.0::gentoo
 # required by dev-python/service_identity-18.1.0::gentoo
 # required by dev-python/twisted-20.3.0::gentoo[crypt]
 # required by dev-python/python-mpd-1.0.0::gentoo[-test,twisted]
 # required by @selected
 # required by @world (argument)
->=dev-python/six-1.14.0 python_targets_python3_6
-# required by dev-python/cryptography-2.9::gentoo[-python_targets_python3_8,python_targets_python2_7,python_targets_python3_6,python_targets_python3_7]
+>=dev-python/six-1.14.0 python_targets_python3_8
+# required by dev-python/cryptography-2.9::gentoo[-python_targets_python3_7,python_targets_python2_7,python_targets_python3_7,python_targets_python3_7]
 # required by dev-python/paramiko-2.7.1::gentoo
 # required by app-emulation/docker-compose-1.25.5::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/cffi-1.14.0 python_targets_python3_6
+>=dev-python/cffi-1.14.0 python_targets_python3_8
 # required by dev-python/cffi-1.14.0::gentoo
 # required by dev-python/pynacl-1.3.0::gentoo
 # required by dev-python/paramiko-2.7.1::gentoo
 # required by app-emulation/docker-compose-1.25.5::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/pycparser-2.20 python_targets_python3_6
+>=dev-python/pycparser-2.20 python_targets_python3_8
 # required by dev-python/pycparser-2.20::gentoo
 # required by dev-python/cffi-1.14.0::gentoo
 # required by dev-python/pynacl-1.3.0::gentoo
@@ -294,15 +294,198 @@ sys-apps/util-linux static-libs
 # required by app-emulation/docker-compose-1.25.5::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/ply-3.11 python_targets_python3_6
+>=dev-python/ply-3.11 python_targets_python3_7
 # required by dev-python/urllib3-1.25.9::gentoo
 # required by dev-python/requests-2.23.0::gentoo
 # required by dev-python/docker-py-4.2.0-r1::gentoo
 # required by app-emulation/docker-compose-1.25.5::gentoo
 # required by @selected
 # required by @world (argument)
->=dev-python/PySocks-1.7.1 python_targets_python3_6
+>=dev-python/PySocks-1.7.1 python_targets_python3_7
 # required by sys-apps/flatpak-1.6.3::guru
 # required by @selected
 # required by @world (argument)
 >=dev-util/ostree-2019.5 curl
+# required by @selected
+# required by @world (argument)
+>=dev-python/autopep8-1.4.4 -python_targets_python2_7
+# required by media-libs/mesa-20.1.1::gentoo[-video_cards_r100,video_cards_radeonsi,-video_cards_radeon,-video_cards_r600,-video_cards_r300,-video_cards_r200]
+# required by virtual/opengl-7.0-r2::gentoo
+# required by media-video/ffmpeg-4.3::gentoo
+# required by app-text/goldendict-1.5.0_rc2-r2::gentoo[ffmpeg]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libdrm-2.4.102 video_cards_radeon
+# required by dev-python/setuptools-46.4.0-r2::gentoo
+# required by dev-python/typing-3.7.4.3::gentoo
+# required by dev-python/m2crypto-0.36.0::gentoo[python_targets_python2_7]
+# required by net-wireless/crda-4.14::gentoo
+# required by net-wireless/wpa_supplicant-2.9-r2::gentoo
+# required by net-misc/networkmanager-1.26.2::gentoo[-iwd,wifi]
+# required by @selected
+# required by @world (argument)
+>=dev-python/setuptools_scm-4.1.2 python_targets_python3_7
+# required by net-im/telegram-desktop-2.2.0-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-qt/qtgui-5.15.0-r1 wayland
+# required by gnome-base/gnome-keyring-3.36.0::gentoo
+# required by app-crypt/libsecret-0.20.3::gentoo
+# required by net-vpn/networkmanager-openvpn-1.8.12::gentoo[gtk]
+# required by networkmanager-openvpn (argument)
+>=app-crypt/pinentry-1.1.0-r3 gnome-keyring
+# required by dev-python/PyQt5-5.15.0-r1::gentoo[multimedia]
+# required by dev-python/pyudev-0.22.0::gentoo[qt5,-test]
+# required by x11-misc/py3status-3.29::gentoo[udev]
+# required by @selected
+# required by @world (argument)
+>=dev-qt/qtmultimedia-5.15.1 widgets
+# required by app-misc/piper-0.5.1::gig[python_single_target_python3_7]
+# required by @selected
+# required by @world (argument)
+>=dev-python/lxml-4.6.2 python_targets_python3_7
+# required by dev-libs/libratbag-0.14::gig[python_single_target_python3_7]
+# required by app-misc/piper-0.5.1::gig
+# required by @selected
+# required by @world (argument)
+>=dev-python/pygobject-3.38.0 python_targets_python3_7
+# required by dev-python/lxml-4.6.2::gentoo
+# required by sys-apps/systemd-247.1::gentoo
+# required by virtual/tmpfiles-0-r1::gentoo
+# required by sys-apps/portage-3.0.12::gentoo
+# required by app-portage/gentoopm-0.3.2::gentoo
+# required by app-portage/smart-live-rebuild-1.3.6::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-python/cython-0.29.21-r1 python_targets_python3_7
+# required by dev-python/pygobject-3.38.0::gentoo[cairo]
+# required by net-misc/networkmanager-1.26.6::gentoo[introspection,-test]
+# required by @selected
+# required by @world (argument)
+>=dev-python/pycairo-1.20.0 python_targets_python3_8
+# required by net-misc/nextcloud-client-3.1.1-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-libs/qtkeychain-0.11.1 gnome-keyring
+# required by media-gfx/displaycal-3.8.9.3-r4::calculate
+# required by displaycal (argument)
+>=dev-python/wxpython2-3.0.2.0-r2 python_targets_python2_7
+# required by media-gfx/displaycal-3.8.9.3-r4::calculate
+# required by displaycal (argument)
+>=dev-python/setuptools-python2-46.4.0-r4 python_targets_python2_7
+# required by media-gfx/displaycal-3.8.9.3-r4::calculate
+# required by displaycal (argument)
+>=dev-python/faulthandler-python2-3.0-r2 python_targets_python2_7
+# required by media-gfx/displaycal-3.8.9.3-r4::calculate
+# required by displaycal (argument)
+>=dev-python/numpy-python2-1.16.6-r2 python_targets_python2_7
+# required by media-gfx/displaycal-3.8.9.3-r4::calculate
+# required by displaycal (argument)
+>=dev-python/dbus-python2-1.2.16-r2 python_targets_python2_7
+# required by dev-python/wxpython2-3.0.2.0-r2::calculate[cairo]
+# required by media-gfx/displaycal-3.8.9.3-r4::calculate
+# required by displaycal (argument)
+>=dev-python/pycairo-python2-1.18.2-r1 python_targets_python2_7
+# required by dev-python/wxpython2-3.0.2.0-r2::calculate[opengl]
+# required by media-gfx/displaycal-3.8.9.3-r4::calculate
+# required by displaycal (argument)
+>=dev-python/pyopengl-python2-3.1.0-r3 python_targets_python2_7
+# required by x11-misc/barrier-2.3.3::gentoo[gui]
+# required by barrier (argument)
+>=net-dns/avahi-0.8-r2 mdnsresponder-compat
+# required by mail-client/mutt-wizard-3.2.1-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=mail-client/neomutt-20210205 sasl
+# required by sys-boot/os-prober-1.78::gentoo
+# required by sys-boot/os-prober (argument)
+>=sys-boot/grub-2.06_rc1 mount
+# required by dev-python/setuptools_scm-6.0.1-r1::gentoo
+# required by dev-python/lazy-object-proxy-1.5.0::gentoo
+# required by dev-python/astroid-2.5.6::gentoo
+# required by dev-python/pylint-2.8.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-python/toml-0.10.2 python_targets_python3_8
+# required by dev-python/pygobject-3.40.1::gentoo[cairo]
+# required by app-misc/piper-0.5.1::gentoo[python_single_target_python3_8]
+# required by @selected
+# required by @world (argument)
+>=dev-python/pycairo-1.20.1 python_targets_python3_8
+# required by dev-python/python-evdev-1.4.0::gentoo
+# required by app-misc/piper-0.5.1::gentoo[python_single_target_python3_8]
+# required by @selected
+# required by @world (argument)
+>=dev-python/setuptools-57.0.0 python_targets_python3_8
+# required by dev-python/setuptools-57.0.0::gentoo
+# required by dev-python/mako-1.1.4::gentoo
+# required by media-libs/mesa-21.1.2::gentoo
+# required by app-emulation/qemu-6.0.0::gentoo[opengl,-static]
+# required by app-emulation/libvirt-7.3.0::gentoo[qemu]
+# required by dev-python/libvirt-python-7.3.0::gentoo
+# required by app-emulation/virt-manager-3.2.0::gentoo[python_single_target_python3_9]
+# required by @selected
+# required by @world (argument)
+>=dev-python/setuptools_scm-6.0.1-r1 python_targets_python3_8
+# required by dev-python/urllib3-1.26.5::gentoo
+# required by dev-python/requests-2.25.1-r2::gentoo
+# required by dev-python/docker-py-5.0.0::gentoo
+# required by app-emulation/docker-compose-1.29.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-python/PySocks-1.7.1-r1 python_targets_python3_8
+# required by dev-python/pycparser-2.20-r1::gentoo
+# required by dev-python/cffi-1.14.5::gentoo
+# required by dev-python/bcrypt-3.2.0::gentoo[python_targets_python3_9,-test,-python_targets_python3_10,-python_targets_python3_8]
+# required by dev-python/paramiko-2.7.2::gentoo
+# required by app-emulation/docker-compose-1.29.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-python/ply-3.11-r1 python_targets_python3_8
+# required by dev-util/vint-0.3.21::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-python/pyyaml-5.4.1 python_targets_python3_8
+# required by dev-python/pyyaml-5.4.1::gentoo[-python_targets_python3_10,python_targets_python3_8,python_targets_python3_9,libyaml]
+# required by app-emulation/docker-compose-1.29.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-python/cython-0.29.23 python_targets_python3_8
+# required by app-misc/piper-0.5.1::gentoo[python_single_target_python3_8]
+# required by @selected
+# required by @world (argument)
+>=dev-python/lxml-4.6.3-r1 python_targets_python3_8
+# required by app-misc/piper-0.5.1::gentoo[python_single_target_python3_8]
+# required by @selected
+# required by @world (argument)
+>=dev-python/pygobject-3.40.1 python_targets_python3_8
+# required by app-misc/piper-0.5.1::gentoo[python_single_target_python3_8]
+# required by @selected
+# required by @world (argument)
+>=dev-python/python-evdev-1.4.0 python_targets_python3_8
+# required by media-video/vlc-3.0.14::gentoo[ffmpeg]
+# required by @selected
+# required by @world (argument)
+>=media-video/ffmpeg-4.4 vdpau
+# required by media-tv/kodi-19.1::gentoo
+# required by kodi (argument)
+>=media-video/ffmpeg-4.4 openssl
+# required by media-tv/kodi-19.1::gentoo[vaapi,vdpau]
+# required by kodi (argument)
+>=x11-libs/libva-2.12.0 vdpau
+# required by x11-libs/pango-1.48.7-r1::gentoo
+# required by app-office/libreoffice-7.1.4.2::gentoo[gtk]
+# required by @selected
+# required by @world (argument)
+>=media-libs/freetype-2.10.4 harfbuzz
+# required by dev-python/requests-2.26.0::gentoo
+# required by dev-python/docker-py-5.0.0::gentoo
+# required by app-emulation/docker-compose-1.29.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-python/charset_normalizer-2.0.3 python_targets_python3_8
+# required by dev-libs/libappindicator-12.10.1_p20200706::gentoo
+# required by net-misc/remmina-1.4.20::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-libs/libdbusmenu-16.04.0-r1 gtk3

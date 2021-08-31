@@ -10,6 +10,7 @@ set $mod Mod4
 # set $alt Mod1
 
 # 全局字体
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:Noto Sans 10
 
 # Orientation for new workspaces
@@ -131,10 +132,10 @@ set $WS3 3 Chat
 set $WS4 4 File
 set $WS5 5 Media
 set $WS6 6 Game
-set $WS7 7 Download
+set $WS7 7 VM
 set $WS8 8 Code
-set $WS9 9 Trash
-set $WS0 0 Main
+set $WS9 9 Remote
+set $WS0 0 Trash
 
 #---switch workspace---
 
@@ -167,6 +168,10 @@ bindsym $mod+Control+8 move container to workspace $WS8
 bindsym $mod+Control+9 move container to workspace $WS9
 bindsym $mod+Control+0 move container to workspace $WS0
 
+# 多显示器切换
+bindsym $mod+Control+Shift+h move workspace to output left
+bindsym $mod+Control+Shift+l move workspace to output right
+
 #---assign workspace---
 
 #指定工作区，通过xprop命令查看名称
@@ -175,13 +180,16 @@ assign [class="Telegram"] $WS3
 assign [class="Hexchat"] $WS3
 assign [class="Pcmanfm"] $WS4
 assign [class="mpv"] $WS5
+assign [class="vlc"] $WS5
+assign [class="Spotify"] $WS5
 assign [class="Steam"] $WS6
-assign [class="GoldenDict"] $WS9
-assign [class="Nextcloud"] $WS9
+assign [class="org.remmina.Remmina"] $WS9
+assign [class="GoldenDict"] $WS0
+assign [class="Nextcloud"] $WS0
 
 # assign [class="qBittorrent"] $WS7
 
-# for_window [title=".*\.md - Chromium" class="Chromium"] move container to workspace $WS1
+# for_window [title=".*\.md .* - Chromium" class="Chromium"] move container to workspace $WS1
 for_window [class="libreoffice.*"] move to workspace $WS4
 for_window [class="Spotify"] move to workspace $WS5
 for_window [class="Hexchat"] layout tabbed
@@ -306,9 +314,18 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 # bindsym XF86AudioLowerVolume exec "amixer sset 'Master' 5%- unmute"
 # bindsym XF86AudioMute exec amixer -q set Master toggle
 
+# 亮度
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
+
+# Audio
+bindsym XF86AudioPlay exec mpc --host=/home/petrus/.mpd/mpd.socket toggle
+bindsym XF86AudioStop exec mpc --host=/home/petrus/.mpd/mpd.socket stop
+bindsym XF86AudioPrev exec mpc --host=/home/petrus/.mpd/mpd.socket prev
+bindsym XF86AudioNext exec mpc --host=/home/petrus/.mpd/mpd.socket next
+
 # 截图
-bindsym Print exec flameshot gui -p /home/petrus/Pictures/Screenshot
-bindsym Shift+Print exec flameshot gui -p /home/petrus/Pictures/Screenshot -d 2000
+bindsym Print exec flameshot gui -p /home/petrus/Pictures/Screenshot -d 200
 bindsym Control+Print exec flameshot full -c -p /home/petrus/Pictures/Screenshot
 
 # 切换触摸板开关
@@ -317,7 +334,7 @@ bindsym XF86TouchpadOn exec bash ~/Scripts/touchpad_on.sh
 bindsym XF86TouchpadOff exec bash ~/Scripts/touchpad_off.sh
 
 # 打开一个终端（推荐termite）
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec alacritty
 
 # 运行Rofi快速运行软件
 bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -434,7 +451,7 @@ mode "$mode_system" {
   # bindsym s exec betterlockscreen -s dim, mode "default"
   bindsym s exec systemctl suspend, mode "default"
   bindsym r exec systemctl reboot, mode "default"
-  # bindsym h exec systemctl hibernate, mode "default"
+  bindsym h exec systemctl hibernate, mode "default"
   bindsym p exec systemctl poweroff, mode "default"
 
   # back to normal: Enter or Escape
@@ -465,6 +482,9 @@ bindsym $mod+Control+p mode "$mode_mpd"
 #状态栏
 bar {
     position bottom
+    # tray_output none
+    tray_output primary
+    tray_output HDMI-0
     tray_output DP-0
     status_command py3status --dbus-notify -c ~/.config/i3/i3status.conf
     # status_command i3blocks -c ~/.config/i3/i3blocks.conf
@@ -479,7 +499,7 @@ bar {
     # separator_symbol "//"
     # strip_workspace_numbers yes
     # 非i3-gaps请删除下面这一行
-    height 25
+    height 36
 
     # 取消状态栏鼠标滚动
     bindsym button4 nop
@@ -494,7 +514,7 @@ bar {
 
       # Type             border                 background              font
       focused_workspace  $color_bright_yellow   $color_bright_yellow    $color_dark0_hard
-      active_workspace   $color_unused          $color_unused           $color_unused
+      active_workspace   $color_faded_yellow    $color_faded_yellow     $color_dark0_soft
       inactive_workspace $color_dark0_hard      $color_dark0_hard       $color_light4_256
       urgent_workspace   $color_bright_red      $color_bright_red       $color_light0_hard
     }
@@ -505,24 +525,29 @@ bar {
 # -----------------------------------------------------------------------------
 
 # 开启鼠标中间滚动
-exec xinput set-prop "Logitech Gaming Mouse G400" "libinput Scroll Method Enabled" 0, 0, 1
+exec xinput set-prop "Logitech G502" "libinput Scroll Method Enabled" 0, 0, 1
 exec --no-startup-id compton -cb --config ~/.config/compton.conf
 exec --no-startup-id conky -c ~/.config/conky/conky
 exec --no-startup-id conky -c ~/.config/conky/conky.shortcuts
 exec --no-startup-id fcitx
 exec --no-startup-id nextcloud
 exec --no-startup-id chromium
-exec --no-startup-id gnome-terminal
+exec --no-startup-id alacritty
 exec --no-startup-id telegram-desktop
-exec --no-startup-id hexchat
+# exec --no-startup-id hexchat
 exec --no-startup-id unclutter
-exec --no-startup-id goldendict
-exec --no-startup-id xautolock -time 15 -notify 10 -notifier "notify-send 'locking screen in 10 seconds!'" -locker "/home/petrus/Scripts/auto_lock_screen.sh"
+exec --no-startup-id barriers --name REN7000P --enable-crypto --address :24800
+# exec --no-startup-id goldendict
+# exec --no-startup-id sleep 3 && qv2ray
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id xiccd
+exec --no-startup-id xautolock -time 15 -notify 10 -notifier "notify-send" -locker "/home/petrus/Scripts/auto_lock_screen.sh"
 exec --no-startup-id /usr/bin/gpg-agent --daemon
 
 #---wallpaper---
 # static mode
-exec --no-startup-id feh -Z --bg-scale /home/petrus/Pictures/gentoo/wall.png
+exec --no-startup-id feh -Z --bg-fill /home/petrus/Pictures/amd/ryzen.png
 # random mode
 # exec ~/.config/i3/wallpaper.sh &
 

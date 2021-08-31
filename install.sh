@@ -44,6 +44,9 @@ if [[ $# == 1 ]]; then
         systemctl enable ratbagd.service
         systemctl enable libvirtd.service
 
+        /usr/share/btrfsmaintenance/btrfsmaintenance-refresh-cron.sh systemd-timer
+        systemctl enable btrfsmaintenance-refresh.path
+
         ln -s /home/petrus/.zshrc /root/.zshrc
 
         eselect pinentry set pinentry-gtk-2

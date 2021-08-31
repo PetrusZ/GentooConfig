@@ -1,11 +1,5 @@
-# www-client/chromium
-media-sound/pulseaudio::jorgicio
-x11-themes/adapta-gtk-theme::jorgicio
-x11-themes/adapta-gtk-theme::4nykey
-dev-go/go-md2man::go-overlay
-media-libs/libuninameslist::4nykey
-media-gfx/fontforge::4nykey
-sys-apps/flatpak::guru
->net-im/telegram-desktop-2.1.13
-#media-fonts/source-han-sans::4nykey
-#>sys-kernel/gentoo-sources-4.15.2
+*/*::gentoo-zh
+*/*::flatpak-overlay
+*/*::calculate
+*/*::4nykey
+*/*::12101111-overlay
