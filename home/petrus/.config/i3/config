@@ -178,7 +178,7 @@ bindsym $mod+Control+Shift+l move workspace to output right
 assign [class="Chromium"] $WS2
 assign [class="Telegram"] $WS3
 assign [class="Hexchat"] $WS3
-assign [class="Pcmanfm"] $WS4
+assign [class="Thunar"] $WS4
 assign [class="mpv"] $WS5
 assign [class="vlc"] $WS5
 assign [class="Spotify"] $WS5

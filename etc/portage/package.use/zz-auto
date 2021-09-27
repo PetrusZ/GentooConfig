@@ -489,3 +489,24 @@ sys-apps/util-linux static-libs
 # required by @selected
 # required by @world (argument)
 >=dev-libs/libdbusmenu-16.04.0-r1 gtk3
+# required by dev-python/setuptools_scm-6.3.2::gentoo
+# required by dev-python/astroid-2.7.3::gentoo
+# required by dev-python/pylint-2.10.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-python/packaging-21.0 python_targets_python3_8
+# required by dev-python/setuptools_scm-6.3.2::gentoo
+# required by dev-python/astroid-2.7.3::gentoo
+# required by dev-python/pylint-2.10.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-python/tomli-1.2.1 python_targets_python3_8
+# required by dev-python/packaging-21.0::gentoo
+# required by dev-python/sphinx-4.2.0::gentoo
+# required by app-emulation/qemu-6.0.0-r53::gentoo[doc]
+# required by app-emulation/libvirt-7.7.0::gentoo[qemu]
+# required by dev-python/libvirt-python-7.7.0::gentoo
+# required by app-emulation/virt-manager-3.2.0::gentoo[python_single_target_python3_9]
+# required by @selected
+# required by @world (argument)
+>=dev-python/pyparsing-2.4.7-r1 python_targets_python3_8

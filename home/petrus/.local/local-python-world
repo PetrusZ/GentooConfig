@@ -11,3 +11,4 @@ pynat
 python-telegram-bot
 Werkzeug
 pyowm
+pymongo
